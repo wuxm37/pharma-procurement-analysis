@@ -5,7 +5,9 @@
 ## 项目展示
 
 <!-- LIVE_DEMO_START -->
-在线访问地址将在 GitHub Pages 部署验证后提供。本地可双击 `打开看板.cmd` 或打开 `outputs/demo/index.html`，无需安装分析环境。
+**[在线分析看板](https://wuxm37.github.io/pharma-procurement-analysis/)** · [项目说明](https://wuxm37.github.io/pharma-procurement-analysis/project.html) · [采购分析报告](https://wuxm37.github.io/pharma-procurement-analysis/report.html)
+
+网页可直接浏览，无需登录 GitHub 或安装分析环境。下载项目后，也可双击 `打开看板.cmd` 或打开 `outputs/demo/index.html`。
 <!-- LIVE_DEMO_END -->
 
 看板包含策略评估、ABC 与风险清单、预测与清洗依据三个视图，另附可直接浏览的项目说明和分析报告。
