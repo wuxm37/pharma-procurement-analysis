@@ -1,0 +1,32 @@
+{
+  "generated_at": "2026-11-02T10:14:14.489068+00:00",
+  "presentation_updated_at": "2026-11-02T12:05:03.852053+00:00",
+  "source_sha256": "0cc34913bbb78ad0651c46e147d3fe5b479c436b5c40c66e2708b0ee1a2ab0dd",
+  "note": "generated_at 为计算及计时的运行时间；presentation_updated_at 为展示文件更新时间。仅刷新展示时不重测处理耗时。",
+  "inputs": {
+    "config.json": "1180f5fce81f46d64d13536d0ba63495fb4b22252d8f0e2dd6ebc85936573a14",
+    "run_project.py": "31320e8bf5139508df29815beac9e349a700bcd83b6fed8400a9e6fe177d1b81",
+    "analysis/__init__.py": "9f60af250bf300b8764d83bf8d171bddd2732b294bc836b38593fefae81da641",
+    "analysis/cleaning.py": "2997807a667c2287762899a05400047a06076af2633ba143a364c1f21411a307",
+    "analysis/forecast.py": "05d8eec1af3ca910992949602446dcc0ef5522ec7bad607007d84311f2bc930d",
+    "analysis/inventory.py": "ed764652fbc48f34e8fd35fc8930f4c3ac190b7f870669c815ed89d35d1aab25",
+    "analysis/presentation.py": "60aead0aebe7c773434cd3cdfe8195496edcb225ca7efbaf4fcc516507c68c70",
+    "analysis/reporting.py": "604559b4d627174d96b05de804dcb41b53a7ac468fc0140c20ced6c8bbc4ab27",
+    "analysis/source.py": "eb398bfad6d7dbc2501702988f2505fe003416b67bd329303c5f3b7a59f2603c",
+    "tests/test_analysis.py": "311834adac566e4cd183feeb87f16683dbc89f307f3c9e42e576207ca753d32d",
+    "web/dashboard.html": "b10a22d32b888f8f069a249b4b1031f509a1dc6621104ce6e5fbc94fe9bc66ee"
+  },
+  "outputs": {
+    "outputs/demo/results.json": "09bc8289c81e920b4a92432b9bfd2760429804863cb3f447d98b7b2c683e4dec",
+    "outputs/demo/index.html": "12f7bd099057f1967a0f1bf39510834913faa604f933b49751344fcdd7b592c2",
+    "outputs/demo/project.html": "840f6b62f14fc54b0e6bc3f6cdc8659baf606c78d290feb4fb484d0c889bee57",
+    "outputs/demo/report.html": "47aea7185da40957307b6945c25d0982c919733304cf872b3eec216718b42168",
+    "outputs/demo/ANALYSIS_REPORT.md": "c4b57c2c2b812088b56a51949c988f5fb3e06cf49e1d92ca05c2cb0c5a0d62ad",
+    "outputs/demo/cleaned_demand.csv": "7a248ec7b72d50ae8e8d9945c6d743812206f1a1300286c90b255fe8cf5e2bd5",
+    "outputs/demo/forecast_test.csv": "bf5bf2f82561a0d22d3a4b257ac66c14dfbc032d010e89c171471c622a365eef",
+    "outputs/demo/forecast_validation.csv": "137eef3f54bfb5ba9984fb651144db5d06318de4db6adf570f30bdb44ecc54f9",
+    "outputs/demo/inventory_risks.csv": "a72805ddbfe881f7597fc74b12cde836bbee83aefe5bbc206284fc7ed9bcc608",
+    "outputs/demo/simulation_ledger.csv": "f75d11a1dca232cdf67505a7e69c84650c1154b3ca7777369a54955a6f32db33",
+    "outputs/demo/stress_lead2_ledger.csv": "406ef82c08e9e6e1aee76cf012676d50bb7716902df763f21dd6dd511f9a0588"
+  }
+}

@@ -1,0 +1,20 @@
+file,field,description
+monthly_demand_long.csv,Medication,Anonymized medicine identifier (M01-M13). No identity mapping is included.
+monthly_demand_long.csv,MonthIndex,Sequential monthly index from 1 to 48.
+monthly_demand_long.csv,Demand,Monthly demand in units.
+empirical_inputs.csv,Medication,Anonymized medicine identifier (M01-M13).
+empirical_inputs.csv,o,Fixed ordering cost used in the one-cycle inventory-cost function.
+empirical_inputs.csv,h,Unit holding cost used in the one-cycle inventory-cost function.
+empirical_inputs.csv,s_factor,Proportional shortage-cost factor applied to unit acquisition cost.
+empirical_inputs.csv,C_money,Operational replenishment-capacity bound expressed in monetary units.
+empirical_inputs.csv,unit_price,Unit acquisition cost.
+empirical_inputs.csv,real_demand,Observed demand in the final evaluation period.
+empirical_inputs.csv,stock_initial,Initial inventory before the final evaluation period.
+empirical_inputs.csv,q_real,Observed replenishment quantity in the final evaluation period.
+descriptive_results.csv,CV,Coefficient of variation.
+descriptive_results.csv,ZeroPct,Share of zero-demand months.
+aic_results.csv,AIC_*,Akaike Information Criterion for each candidate distribution; lower values indicate better relative fit.
+inventory_results.csv,CT_*,Realized one-cycle total cost for each fitted model.
+inventory_results.csv,SavingsPct,Percentage savings relative to the empirical baseline.
+simulation_results.csv,Wins_*,Number of simulation replications won by each model within the scenario.
+decision_rules.csv,Recommended model,Interpretable model-selection guidance derived from empirical and simulation evidence.

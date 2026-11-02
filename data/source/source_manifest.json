@@ -1,0 +1,22 @@
+{
+  "doi": "10.5281/zenodo.22286723",
+  "url": "https://zenodo.org/records/22286723",
+  "license": "CC BY 4.0",
+  "author": "Fernando Rojas",
+  "archive_md5": "ef1ee4be3a21a07a4df37694690b12cc",
+  "archive_sha256": "0cc34913bbb78ad0651c46e147d3fe5b479c436b5c40c66e2708b0ee1a2ab0dd",
+  "files": {
+    "monthly_demand_long.csv": {
+      "sha256": "61667f999afe512277c24593aacb8f7125c625b74ee9fcae62d253527a05c27b",
+      "bytes": 6870
+    },
+    "empirical_inputs.csv": {
+      "sha256": "23ce07974f66f3ebc853012eee93cb678c9e5c322ef44e056815023d1e1f51ee",
+      "bytes": 1112
+    },
+    "data_dictionary.csv": {
+      "sha256": "89184c876690e09d34449c0adea618fc57e068df820377de072ec2e80db55066",
+      "bytes": 1665
+    }
+  }
+}

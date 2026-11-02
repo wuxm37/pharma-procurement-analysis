@@ -1,0 +1,20 @@
+{
+  "version": "1.0",
+  "source_doi": "10.5281/zenodo.22286723",
+  "training_end": 24,
+  "selection_end": 36,
+  "evaluation_end": 48,
+  "lead_months": 1,
+  "review_months": 1,
+  "baseline_cover_months": 3,
+  "initial_cover_months": 3,
+  "baseline_window": 12,
+  "safety_quantile": 0.95,
+  "safety_history_origins": 24,
+  "annual_holding_rate": 0.2,
+  "abc_thresholds": [0.8, 0.95],
+  "stagnant_months": 3,
+  "excess_cover_months": 6,
+  "benchmark_repetitions": 5,
+  "benchmark_copies": 160
+}

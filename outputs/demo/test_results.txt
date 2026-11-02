@@ -1,0 +1,28 @@
+test_abc_crossing_threshold (test_analysis.CalculationTests.test_abc_crossing_threshold) ... ok
+test_abc_threshold_and_zero (test_analysis.CalculationTests.test_abc_threshold_and_zero) ... ok
+test_average_inventory_and_turnover_hand_case (test_analysis.CalculationTests.test_average_inventory_and_turnover_hand_case) ... ok
+test_forecasts_constant_and_zero (test_analysis.CalculationTests.test_forecasts_constant_and_zero) ... ok
+test_future_change_does_not_change_earlier_decisions (test_analysis.CalculationTests.test_future_change_does_not_change_earlier_decisions) ... ok
+test_invalid_history_fails (test_analysis.CalculationTests.test_invalid_history_fails) ... ok
+test_orders_arrive_next_month (test_analysis.CalculationTests.test_orders_arrive_next_month) ... ok
+test_safety_stock_constant_is_zero (test_analysis.CalculationTests.test_safety_stock_constant_is_zero) ... ok
+test_safety_stock_two_period_error_by_hand (test_analysis.CalculationTests.test_safety_stock_two_period_error_by_hand) ... ok
+test_conflicting_keys_fail (test_analysis.CleaningTests.test_conflicting_keys_fail) ... ok
+test_invalid_rows_are_not_zero (test_analysis.CleaningTests.test_invalid_rows_are_not_zero) ... ok
+test_standardizes_and_deduplicates (test_analysis.CleaningTests.test_standardizes_and_deduplicates) ... ok
+test_two_implementations_agree (test_analysis.CleaningTests.test_two_implementations_agree) ... ok
+test_accumulation_and_reorder_conflict_requires_review (test_analysis.PublicDataTests.test_accumulation_and_reorder_conflict_requires_review) ... ok
+test_heldout_values_do_not_select_models (test_analysis.PublicDataTests.test_heldout_values_do_not_select_models) ... ok
+test_inventory_and_pipeline_conserve_units (test_analysis.PublicDataTests.test_inventory_and_pipeline_conserve_units) ... ok
+test_lead_two_still_reconciles (test_analysis.PublicDataTests.test_lead_two_still_reconciles) ... ok
+test_operating_cost_includes_ordering_tradeoff (test_analysis.PublicDataTests.test_operating_cost_includes_ordering_tradeoff) ... ok
+test_published_snapshot_uses_no_month48_demand (test_analysis.PublicDataTests.test_published_snapshot_uses_no_month48_demand) ... ok
+test_source_calendar_and_identity (test_analysis.PublicDataTests.test_source_calendar_and_identity) ... ok
+test_stagnant_rule_with_explicit_synthetic_fixture (test_analysis.PublicDataTests.test_stagnant_rule_with_explicit_synthetic_fixture) ... ok
+test_strategies_have_same_initial_stock (test_analysis.PublicDataTests.test_strategies_have_same_initial_stock) ... ok
+test_zero_portfolio_has_no_infinite_ratios (test_analysis.PublicDataTests.test_zero_portfolio_has_no_infinite_ratios) ... ok
+
+----------------------------------------------------------------------
+Ran 23 tests in 0.615s
+
+OK

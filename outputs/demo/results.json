@@ -1,0 +1,5930 @@
+{
+  "title": "药品采购成本与库存周转优化分析",
+  "config": {
+    "version": "1.0",
+    "source_doi": "10.5281/zenodo.22286723",
+    "training_end": 24,
+    "selection_end": 36,
+    "evaluation_end": 48,
+    "lead_months": 1,
+    "review_months": 1,
+    "baseline_cover_months": 3,
+    "initial_cover_months": 3,
+    "baseline_window": 12,
+    "safety_quantile": 0.95,
+    "safety_history_origins": 24,
+    "annual_holding_rate": 0.2,
+    "abc_thresholds": [
+      0.8,
+      0.95
+    ],
+    "stagnant_months": 3,
+    "excess_cover_months": 6,
+    "benchmark_repetitions": 5,
+    "benchmark_copies": 160
+  },
+  "generated_at": "2026-11-02T10:14:14.489068+00:00",
+  "runtime": {
+    "python": "3.12.14",
+    "pandas": "3.0.1",
+    "numpy": "2.3.5",
+    "platform": "Windows"
+  },
+  "source": {
+    "doi": "10.5281/zenodo.22286723",
+    "url": "https://zenodo.org/records/22286723",
+    "license": "CC BY 4.0",
+    "author": "Fernando Rojas",
+    "archive_md5": "ef1ee4be3a21a07a4df37694690b12cc",
+    "archive_sha256": "0cc34913bbb78ad0651c46e147d3fe5b479c436b5c40c66e2708b0ee1a2ab0dd",
+    "files": {
+      "monthly_demand_long.csv": {
+        "sha256": "61667f999afe512277c24593aacb8f7125c625b74ee9fcae62d253527a05c27b",
+        "bytes": 6870
+      },
+      "empirical_inputs.csv": {
+        "sha256": "23ce07974f66f3ebc853012eee93cb678c9e5c322ef44e056815023d1e1f51ee",
+        "bytes": 1112
+      },
+      "data_dictionary.csv": {
+        "sha256": "89184c876690e09d34449c0adea618fc57e068df820377de072ec2e80db55066",
+        "bytes": 1665
+      }
+    }
+  },
+  "audit": {
+    "input_rows": 624,
+    "invalid_rows": 0,
+    "duplicate_rows": 0,
+    "output_rows": 624
+  },
+  "methods": {
+    "mean12": "近12月均值",
+    "mean6": "近6月均值",
+    "mean3": "近3月均值",
+    "ses": "指数平滑",
+    "seasonal": "上一年同月",
+    "tsb": "间歇需求分解"
+  },
+  "selected": {
+    "M01": "mean6",
+    "M02": "mean12",
+    "M03": "mean3",
+    "M04": "mean3",
+    "M05": "seasonal",
+    "M06": "mean3",
+    "M07": "seasonal",
+    "M08": "mean12",
+    "M09": "mean12",
+    "M10": "mean6",
+    "M11": "seasonal",
+    "M12": "mean12",
+    "M13": "mean3"
+  },
+  "forecast_errors": {
+    "baseline": 0.15366328940442292,
+    "selected": 0.12986078737571993
+  },
+  "forecast_rows": [
+    {
+      "Medication": "M01",
+      "MonthIndex": 37,
+      "actual": 208930,
+      "baseline_forecast": 211289.16666666666,
+      "selected_forecast": 219271.66666666666,
+      "method": "mean6",
+      "unit_price": 137.0
+    },
+    {
+      "Medication": "M01",
+      "MonthIndex": 38,
+      "actual": 185140,
+      "baseline_forecast": 212045.0,
+      "selected_forecast": 218690.0,
+      "method": "mean6",
+      "unit_price": 137.0
+    },
+    {
+      "Medication": "M01",
+      "MonthIndex": 39,
+      "actual": 253430,
+      "baseline_forecast": 213536.66666666666,
+      "selected_forecast": 212106.66666666666,
+      "method": "mean6",
+      "unit_price": 137.0
+    },
+    {
+      "Medication": "M01",
+      "MonthIndex": 40,
+      "actual": 201770,
+      "baseline_forecast": 214545.83333333334,
+      "selected_forecast": 217818.33333333334,
+      "method": "mean6",
+      "unit_price": 137.0
+    },
+    {
+      "Medication": "M01",
+      "MonthIndex": 41,
+      "actual": 207012,
+      "baseline_forecast": 214436.66666666666,
+      "selected_forecast": 216226.66666666666,
+      "method": "mean6",
+      "unit_price": 137.0
+    },
+    {
+      "Medication": "M01",
+      "MonthIndex": 42,
+      "actual": 236120,
+      "baseline_forecast": 214830.16666666666,
+      "selected_forecast": 213118.66666666666,
+      "method": "mean6",
+      "unit_price": 137.0
+    },
+    {
+      "Medication": "M01",
+      "MonthIndex": 43,
+      "actual": 215935,
+      "baseline_forecast": 217336.0,
+      "selected_forecast": 215400.33333333334,
+      "method": "mean6",
+      "unit_price": 137.0
+    },
+    {
+      "Medication": "M01",
+      "MonthIndex": 44,
+      "actual": 235118,
+      "baseline_forecast": 217628.91666666666,
+      "selected_forecast": 216567.83333333334,
+      "method": "mean6",
+      "unit_price": 137.0
+    },
+    {
+      "Medication": "M01",
+      "MonthIndex": 45,
+      "actual": 216370,
+      "baseline_forecast": 218502.08333333334,
+      "selected_forecast": 224897.5,
+      "method": "mean6",
+      "unit_price": 137.0
+    },
+    {
+      "Medication": "M01",
+      "MonthIndex": 46,
+      "actual": 207105,
+      "baseline_forecast": 218269.58333333334,
+      "selected_forecast": 218720.83333333334,
+      "method": "mean6",
+      "unit_price": 137.0
+    },
+    {
+      "Medication": "M01",
+      "MonthIndex": 47,
+      "actual": 218073,
+      "baseline_forecast": 217918.33333333334,
+      "selected_forecast": 219610.0,
+      "method": "mean6",
+      "unit_price": 137.0
+    },
+    {
+      "Medication": "M01",
+      "MonthIndex": 48,
+      "actual": 229907,
+      "baseline_forecast": 217286.08333333334,
+      "selected_forecast": 221453.5,
+      "method": "mean6",
+      "unit_price": 137.0
+    },
+    {
+      "Medication": "M02",
+      "MonthIndex": 37,
+      "actual": 1753,
+      "baseline_forecast": 2062.8333333333335,
+      "selected_forecast": 2062.8333333333335,
+      "method": "mean12",
+      "unit_price": 8663.0
+    },
+    {
+      "Medication": "M02",
+      "MonthIndex": 38,
+      "actual": 1557,
+      "baseline_forecast": 2041.0,
+      "selected_forecast": 2041.0,
+      "method": "mean12",
+      "unit_price": 8663.0
+    },
+    {
+      "Medication": "M02",
+      "MonthIndex": 39,
+      "actual": 2189,
+      "baseline_forecast": 2015.75,
+      "selected_forecast": 2015.75,
+      "method": "mean12",
+      "unit_price": 8663.0
+    },
+    {
+      "Medication": "M02",
+      "MonthIndex": 40,
+      "actual": 1869,
+      "baseline_forecast": 1995.5833333333333,
+      "selected_forecast": 1995.5833333333333,
+      "method": "mean12",
+      "unit_price": 8663.0
+    },
+    {
+      "Medication": "M02",
+      "MonthIndex": 41,
+      "actual": 2033,
+      "baseline_forecast": 2005.5,
+      "selected_forecast": 2005.5,
+      "method": "mean12",
+      "unit_price": 8663.0
+    },
+    {
+      "Medication": "M02",
+      "MonthIndex": 42,
+      "actual": 1189,
+      "baseline_forecast": 1997.8333333333333,
+      "selected_forecast": 1997.8333333333333,
+      "method": "mean12",
+      "unit_price": 8663.0
+    },
+    {
+      "Medication": "M02",
+      "MonthIndex": 43,
+      "actual": 2134,
+      "baseline_forecast": 1915.1666666666667,
+      "selected_forecast": 1915.1666666666667,
+      "method": "mean12",
+      "unit_price": 8663.0
+    },
+    {
+      "Medication": "M02",
+      "MonthIndex": 44,
+      "actual": 2229,
+      "baseline_forecast": 1921.5833333333333,
+      "selected_forecast": 1921.5833333333333,
+      "method": "mean12",
+      "unit_price": 8663.0
+    },
+    {
+      "Medication": "M02",
+      "MonthIndex": 45,
+      "actual": 1354,
+      "baseline_forecast": 1928.4166666666667,
+      "selected_forecast": 1928.4166666666667,
+      "method": "mean12",
+      "unit_price": 8663.0
+    },
+    {
+      "Medication": "M02",
+      "MonthIndex": 46,
+      "actual": 1782,
+      "baseline_forecast": 1869.3333333333333,
+      "selected_forecast": 1869.3333333333333,
+      "method": "mean12",
+      "unit_price": 8663.0
+    },
+    {
+      "Medication": "M02",
+      "MonthIndex": 47,
+      "actual": 2071,
+      "baseline_forecast": 1854.1666666666667,
+      "selected_forecast": 1854.1666666666667,
+      "method": "mean12",
+      "unit_price": 8663.0
+    },
+    {
+      "Medication": "M02",
+      "MonthIndex": 48,
+      "actual": 1381,
+      "baseline_forecast": 1845.3333333333333,
+      "selected_forecast": 1845.3333333333333,
+      "method": "mean12",
+      "unit_price": 8663.0
+    },
+    {
+      "Medication": "M03",
+      "MonthIndex": 37,
+      "actual": 806,
+      "baseline_forecast": 662.8333333333334,
+      "selected_forecast": 754.3333333333334,
+      "method": "mean3",
+      "unit_price": 16797.0
+    },
+    {
+      "Medication": "M03",
+      "MonthIndex": 38,
+      "actual": 717,
+      "baseline_forecast": 688.0,
+      "selected_forecast": 779.0,
+      "method": "mean3",
+      "unit_price": 16797.0
+    },
+    {
+      "Medication": "M03",
+      "MonthIndex": 39,
+      "actual": 872,
+      "baseline_forecast": 701.5,
+      "selected_forecast": 770.3333333333334,
+      "method": "mean3",
+      "unit_price": 16797.0
+    },
+    {
+      "Medication": "M03",
+      "MonthIndex": 40,
+      "actual": 660,
+      "baseline_forecast": 715.6666666666666,
+      "selected_forecast": 798.3333333333334,
+      "method": "mean3",
+      "unit_price": 16797.0
+    },
+    {
+      "Medication": "M03",
+      "MonthIndex": 41,
+      "actual": 890,
+      "baseline_forecast": 732.9166666666666,
+      "selected_forecast": 749.6666666666666,
+      "method": "mean3",
+      "unit_price": 16797.0
+    },
+    {
+      "Medication": "M03",
+      "MonthIndex": 42,
+      "actual": 1008,
+      "baseline_forecast": 747.5833333333334,
+      "selected_forecast": 807.3333333333334,
+      "method": "mean3",
+      "unit_price": 16797.0
+    },
+    {
+      "Medication": "M03",
+      "MonthIndex": 43,
+      "actual": 1192,
+      "baseline_forecast": 775.25,
+      "selected_forecast": 852.6666666666666,
+      "method": "mean3",
+      "unit_price": 16797.0
+    },
+    {
+      "Medication": "M03",
+      "MonthIndex": 44,
+      "actual": 1329,
+      "baseline_forecast": 824.25,
+      "selected_forecast": 1030.0,
+      "method": "mean3",
+      "unit_price": 16797.0
+    },
+    {
+      "Medication": "M03",
+      "MonthIndex": 45,
+      "actual": 1067,
+      "baseline_forecast": 874.25,
+      "selected_forecast": 1176.3333333333333,
+      "method": "mean3",
+      "unit_price": 16797.0
+    },
+    {
+      "Medication": "M03",
+      "MonthIndex": 46,
+      "actual": 1515,
+      "baseline_forecast": 900.3333333333334,
+      "selected_forecast": 1196.0,
+      "method": "mean3",
+      "unit_price": 16797.0
+    },
+    {
+      "Medication": "M03",
+      "MonthIndex": 47,
+      "actual": 1460,
+      "baseline_forecast": 965.5833333333334,
+      "selected_forecast": 1303.6666666666667,
+      "method": "mean3",
+      "unit_price": 16797.0
+    },
+    {
+      "Medication": "M03",
+      "MonthIndex": 48,
+      "actual": 1390,
+      "baseline_forecast": 1025.3333333333333,
+      "selected_forecast": 1347.3333333333333,
+      "method": "mean3",
+      "unit_price": 16797.0
+    },
+    {
+      "Medication": "M04",
+      "MonthIndex": 37,
+      "actual": 202585,
+      "baseline_forecast": 190482.08333333334,
+      "selected_forecast": 201391.66666666666,
+      "method": "mean3",
+      "unit_price": 11.0
+    },
+    {
+      "Medication": "M04",
+      "MonthIndex": 38,
+      "actual": 171440,
+      "baseline_forecast": 190831.66666666666,
+      "selected_forecast": 204190.0,
+      "method": "mean3",
+      "unit_price": 11.0
+    },
+    {
+      "Medication": "M04",
+      "MonthIndex": 39,
+      "actual": 232445,
+      "baseline_forecast": 192205.83333333334,
+      "selected_forecast": 190441.66666666666,
+      "method": "mean3",
+      "unit_price": 11.0
+    },
+    {
+      "Medication": "M04",
+      "MonthIndex": 40,
+      "actual": 177060,
+      "baseline_forecast": 193481.66666666666,
+      "selected_forecast": 202156.66666666666,
+      "method": "mean3",
+      "unit_price": 11.0
+    },
+    {
+      "Medication": "M04",
+      "MonthIndex": 41,
+      "actual": 184690,
+      "baseline_forecast": 193745.0,
+      "selected_forecast": 193648.33333333334,
+      "method": "mean3",
+      "unit_price": 11.0
+    },
+    {
+      "Medication": "M04",
+      "MonthIndex": 42,
+      "actual": 212650,
+      "baseline_forecast": 194152.08333333334,
+      "selected_forecast": 198065.0,
+      "method": "mean3",
+      "unit_price": 11.0
+    },
+    {
+      "Medication": "M04",
+      "MonthIndex": 43,
+      "actual": 192160,
+      "baseline_forecast": 196769.58333333334,
+      "selected_forecast": 191466.66666666666,
+      "method": "mean3",
+      "unit_price": 11.0
+    },
+    {
+      "Medication": "M04",
+      "MonthIndex": 44,
+      "actual": 206920,
+      "baseline_forecast": 197961.25,
+      "selected_forecast": 196500.0,
+      "method": "mean3",
+      "unit_price": 11.0
+    },
+    {
+      "Medication": "M04",
+      "MonthIndex": 45,
+      "actual": 194760,
+      "baseline_forecast": 198475.41666666666,
+      "selected_forecast": 203910.0,
+      "method": "mean3",
+      "unit_price": 11.0
+    },
+    {
+      "Medication": "M04",
+      "MonthIndex": 46,
+      "actual": 216155,
+      "baseline_forecast": 198240.41666666666,
+      "selected_forecast": 197946.66666666666,
+      "method": "mean3",
+      "unit_price": 11.0
+    },
+    {
+      "Medication": "M04",
+      "MonthIndex": 47,
+      "actual": 196835,
+      "baseline_forecast": 200070.83333333334,
+      "selected_forecast": 205945.0,
+      "method": "mean3",
+      "unit_price": 11.0
+    },
+    {
+      "Medication": "M04",
+      "MonthIndex": 48,
+      "actual": 195965,
+      "baseline_forecast": 198750.0,
+      "selected_forecast": 202583.33333333334,
+      "method": "mean3",
+      "unit_price": 11.0
+    },
+    {
+      "Medication": "M05",
+      "MonthIndex": 37,
+      "actual": 70285,
+      "baseline_forecast": 72166.08333333333,
+      "selected_forecast": 72746.0,
+      "method": "seasonal",
+      "unit_price": 13.0
+    },
+    {
+      "Medication": "M05",
+      "MonthIndex": 38,
+      "actual": 57680,
+      "baseline_forecast": 71961.0,
+      "selected_forecast": 53634.0,
+      "method": "seasonal",
+      "unit_price": 13.0
+    },
+    {
+      "Medication": "M05",
+      "MonthIndex": 39,
+      "actual": 78836,
+      "baseline_forecast": 72298.16666666667,
+      "selected_forecast": 88689.0,
+      "method": "seasonal",
+      "unit_price": 13.0
+    },
+    {
+      "Medication": "M05",
+      "MonthIndex": 40,
+      "actual": 62253,
+      "baseline_forecast": 71477.08333333333,
+      "selected_forecast": 71991.0,
+      "method": "seasonal",
+      "unit_price": 13.0
+    },
+    {
+      "Medication": "M05",
+      "MonthIndex": 41,
+      "actual": 59879,
+      "baseline_forecast": 70665.58333333333,
+      "selected_forecast": 66266.0,
+      "method": "seasonal",
+      "unit_price": 13.0
+    },
+    {
+      "Medication": "M05",
+      "MonthIndex": 42,
+      "actual": 69343,
+      "baseline_forecast": 70133.33333333333,
+      "selected_forecast": 75849.0,
+      "method": "seasonal",
+      "unit_price": 13.0
+    },
+    {
+      "Medication": "M05",
+      "MonthIndex": 43,
+      "actual": 64815,
+      "baseline_forecast": 69591.16666666667,
+      "selected_forecast": 77089.0,
+      "method": "seasonal",
+      "unit_price": 13.0
+    },
+    {
+      "Medication": "M05",
+      "MonthIndex": 44,
+      "actual": 67482,
+      "baseline_forecast": 68568.33333333333,
+      "selected_forecast": 73151.0,
+      "method": "seasonal",
+      "unit_price": 13.0
+    },
+    {
+      "Medication": "M05",
+      "MonthIndex": 45,
+      "actual": 59993,
+      "baseline_forecast": 68095.91666666667,
+      "selected_forecast": 74500.0,
+      "method": "seasonal",
+      "unit_price": 13.0
+    },
+    {
+      "Medication": "M05",
+      "MonthIndex": 46,
+      "actual": 68303,
+      "baseline_forecast": 66887.0,
+      "selected_forecast": 68888.0,
+      "method": "seasonal",
+      "unit_price": 13.0
+    },
+    {
+      "Medication": "M05",
+      "MonthIndex": 47,
+      "actual": 65597,
+      "baseline_forecast": 66838.25,
+      "selected_forecast": 72005.0,
+      "method": "seasonal",
+      "unit_price": 13.0
+    },
+    {
+      "Medication": "M05",
+      "MonthIndex": 48,
+      "actual": 62130,
+      "baseline_forecast": 66304.25,
+      "selected_forecast": 71185.0,
+      "method": "seasonal",
+      "unit_price": 13.0
+    },
+    {
+      "Medication": "M06",
+      "MonthIndex": 37,
+      "actual": 0,
+      "baseline_forecast": 118.75,
+      "selected_forecast": 135.0,
+      "method": "mean3",
+      "unit_price": 596.0
+    },
+    {
+      "Medication": "M06",
+      "MonthIndex": 38,
+      "actual": 135,
+      "baseline_forecast": 111.25,
+      "selected_forecast": 90.0,
+      "method": "mean3",
+      "unit_price": 596.0
+    },
+    {
+      "Medication": "M06",
+      "MonthIndex": 39,
+      "actual": 180,
+      "baseline_forecast": 122.5,
+      "selected_forecast": 45.0,
+      "method": "mean3",
+      "unit_price": 596.0
+    },
+    {
+      "Medication": "M06",
+      "MonthIndex": 40,
+      "actual": 90,
+      "baseline_forecast": 103.75,
+      "selected_forecast": 105.0,
+      "method": "mean3",
+      "unit_price": 596.0
+    },
+    {
+      "Medication": "M06",
+      "MonthIndex": 41,
+      "actual": 45,
+      "baseline_forecast": 111.25,
+      "selected_forecast": 135.0,
+      "method": "mean3",
+      "unit_price": 596.0
+    },
+    {
+      "Medication": "M06",
+      "MonthIndex": 42,
+      "actual": 180,
+      "baseline_forecast": 115.0,
+      "selected_forecast": 105.0,
+      "method": "mean3",
+      "unit_price": 596.0
+    },
+    {
+      "Medication": "M06",
+      "MonthIndex": 43,
+      "actual": 315,
+      "baseline_forecast": 107.5,
+      "selected_forecast": 105.0,
+      "method": "mean3",
+      "unit_price": 596.0
+    },
+    {
+      "Medication": "M06",
+      "MonthIndex": 44,
+      "actual": 0,
+      "baseline_forecast": 122.5,
+      "selected_forecast": 180.0,
+      "method": "mean3",
+      "unit_price": 596.0
+    },
+    {
+      "Medication": "M06",
+      "MonthIndex": 45,
+      "actual": 90,
+      "baseline_forecast": 120.0,
+      "selected_forecast": 165.0,
+      "method": "mean3",
+      "unit_price": 596.0
+    },
+    {
+      "Medication": "M06",
+      "MonthIndex": 46,
+      "actual": 510,
+      "baseline_forecast": 120.0,
+      "selected_forecast": 135.0,
+      "method": "mean3",
+      "unit_price": 596.0
+    },
+    {
+      "Medication": "M06",
+      "MonthIndex": 47,
+      "actual": 240,
+      "baseline_forecast": 151.25,
+      "selected_forecast": 200.0,
+      "method": "mean3",
+      "unit_price": 596.0
+    },
+    {
+      "Medication": "M06",
+      "MonthIndex": 48,
+      "actual": 0,
+      "baseline_forecast": 148.75,
+      "selected_forecast": 280.0,
+      "method": "mean3",
+      "unit_price": 596.0
+    },
+    {
+      "Medication": "M07",
+      "MonthIndex": 37,
+      "actual": 0,
+      "baseline_forecast": 325.8333333333333,
+      "selected_forecast": 540.0,
+      "method": "seasonal",
+      "unit_price": 322.0
+    },
+    {
+      "Medication": "M07",
+      "MonthIndex": 38,
+      "actual": 10,
+      "baseline_forecast": 280.8333333333333,
+      "selected_forecast": 180.0,
+      "method": "seasonal",
+      "unit_price": 322.0
+    },
+    {
+      "Medication": "M07",
+      "MonthIndex": 39,
+      "actual": 520,
+      "baseline_forecast": 266.6666666666667,
+      "selected_forecast": 400.0,
+      "method": "seasonal",
+      "unit_price": 322.0
+    },
+    {
+      "Medication": "M07",
+      "MonthIndex": 40,
+      "actual": 0,
+      "baseline_forecast": 276.6666666666667,
+      "selected_forecast": 180.0,
+      "method": "seasonal",
+      "unit_price": 322.0
+    },
+    {
+      "Medication": "M07",
+      "MonthIndex": 41,
+      "actual": 0,
+      "baseline_forecast": 261.6666666666667,
+      "selected_forecast": 180.0,
+      "method": "seasonal",
+      "unit_price": 322.0
+    },
+    {
+      "Medication": "M07",
+      "MonthIndex": 42,
+      "actual": 360,
+      "baseline_forecast": 246.66666666666666,
+      "selected_forecast": 180.0,
+      "method": "seasonal",
+      "unit_price": 322.0
+    },
+    {
+      "Medication": "M07",
+      "MonthIndex": 43,
+      "actual": 0,
+      "baseline_forecast": 261.6666666666667,
+      "selected_forecast": 180.0,
+      "method": "seasonal",
+      "unit_price": 322.0
+    },
+    {
+      "Medication": "M07",
+      "MonthIndex": 44,
+      "actual": 420,
+      "baseline_forecast": 246.66666666666666,
+      "selected_forecast": 450.0,
+      "method": "seasonal",
+      "unit_price": 322.0
+    },
+    {
+      "Medication": "M07",
+      "MonthIndex": 45,
+      "actual": 0,
+      "baseline_forecast": 244.16666666666666,
+      "selected_forecast": 540.0,
+      "method": "seasonal",
+      "unit_price": 322.0
+    },
+    {
+      "Medication": "M07",
+      "MonthIndex": 46,
+      "actual": 360,
+      "baseline_forecast": 199.16666666666666,
+      "selected_forecast": 180.0,
+      "method": "seasonal",
+      "unit_price": 322.0
+    },
+    {
+      "Medication": "M07",
+      "MonthIndex": 47,
+      "actual": 0,
+      "baseline_forecast": 214.16666666666666,
+      "selected_forecast": 540.0,
+      "method": "seasonal",
+      "unit_price": 322.0
+    },
+    {
+      "Medication": "M07",
+      "MonthIndex": 48,
+      "actual": 360,
+      "baseline_forecast": 169.16666666666666,
+      "selected_forecast": 360.0,
+      "method": "seasonal",
+      "unit_price": 322.0
+    },
+    {
+      "Medication": "M08",
+      "MonthIndex": 37,
+      "actual": 0,
+      "baseline_forecast": 141.41666666666666,
+      "selected_forecast": 141.41666666666666,
+      "method": "mean12",
+      "unit_price": 119.0
+    },
+    {
+      "Medication": "M08",
+      "MonthIndex": 38,
+      "actual": 14,
+      "baseline_forecast": 136.25,
+      "selected_forecast": 136.25,
+      "method": "mean12",
+      "unit_price": 119.0
+    },
+    {
+      "Medication": "M08",
+      "MonthIndex": 39,
+      "actual": 77,
+      "baseline_forecast": 134.91666666666666,
+      "selected_forecast": 134.91666666666666,
+      "method": "mean12",
+      "unit_price": 119.0
+    },
+    {
+      "Medication": "M08",
+      "MonthIndex": 40,
+      "actual": 169,
+      "baseline_forecast": 127.08333333333333,
+      "selected_forecast": 127.08333333333333,
+      "method": "mean12",
+      "unit_price": 119.0
+    },
+    {
+      "Medication": "M08",
+      "MonthIndex": 41,
+      "actual": 42,
+      "baseline_forecast": 127.5,
+      "selected_forecast": 127.5,
+      "method": "mean12",
+      "unit_price": 119.0
+    },
+    {
+      "Medication": "M08",
+      "MonthIndex": 42,
+      "actual": 21,
+      "baseline_forecast": 108.5,
+      "selected_forecast": 108.5,
+      "method": "mean12",
+      "unit_price": 119.0
+    },
+    {
+      "Medication": "M08",
+      "MonthIndex": 43,
+      "actual": 142,
+      "baseline_forecast": 102.0,
+      "selected_forecast": 102.0,
+      "method": "mean12",
+      "unit_price": 119.0
+    },
+    {
+      "Medication": "M08",
+      "MonthIndex": 44,
+      "actual": 105,
+      "baseline_forecast": 100.83333333333333,
+      "selected_forecast": 100.83333333333333,
+      "method": "mean12",
+      "unit_price": 119.0
+    },
+    {
+      "Medication": "M08",
+      "MonthIndex": 45,
+      "actual": 177,
+      "baseline_forecast": 88.08333333333333,
+      "selected_forecast": 88.08333333333333,
+      "method": "mean12",
+      "unit_price": 119.0
+    },
+    {
+      "Medication": "M08",
+      "MonthIndex": 46,
+      "actual": 115,
+      "baseline_forecast": 95.83333333333333,
+      "selected_forecast": 95.83333333333333,
+      "method": "mean12",
+      "unit_price": 119.0
+    },
+    {
+      "Medication": "M08",
+      "MonthIndex": 47,
+      "actual": 84,
+      "baseline_forecast": 96.91666666666667,
+      "selected_forecast": 96.91666666666667,
+      "method": "mean12",
+      "unit_price": 119.0
+    },
+    {
+      "Medication": "M08",
+      "MonthIndex": 48,
+      "actual": 291,
+      "baseline_forecast": 84.08333333333333,
+      "selected_forecast": 84.08333333333333,
+      "method": "mean12",
+      "unit_price": 119.0
+    },
+    {
+      "Medication": "M09",
+      "MonthIndex": 37,
+      "actual": 39,
+      "baseline_forecast": 49.75,
+      "selected_forecast": 49.75,
+      "method": "mean12",
+      "unit_price": 14637.0
+    },
+    {
+      "Medication": "M09",
+      "MonthIndex": 38,
+      "actual": 56,
+      "baseline_forecast": 49.25,
+      "selected_forecast": 49.25,
+      "method": "mean12",
+      "unit_price": 14637.0
+    },
+    {
+      "Medication": "M09",
+      "MonthIndex": 39,
+      "actual": 69,
+      "baseline_forecast": 51.583333333333336,
+      "selected_forecast": 51.583333333333336,
+      "method": "mean12",
+      "unit_price": 14637.0
+    },
+    {
+      "Medication": "M09",
+      "MonthIndex": 40,
+      "actual": 83,
+      "baseline_forecast": 52.333333333333336,
+      "selected_forecast": 52.333333333333336,
+      "method": "mean12",
+      "unit_price": 14637.0
+    },
+    {
+      "Medication": "M09",
+      "MonthIndex": 41,
+      "actual": 86,
+      "baseline_forecast": 55.583333333333336,
+      "selected_forecast": 55.583333333333336,
+      "method": "mean12",
+      "unit_price": 14637.0
+    },
+    {
+      "Medication": "M09",
+      "MonthIndex": 42,
+      "actual": 99,
+      "baseline_forecast": 58.666666666666664,
+      "selected_forecast": 58.666666666666664,
+      "method": "mean12",
+      "unit_price": 14637.0
+    },
+    {
+      "Medication": "M09",
+      "MonthIndex": 43,
+      "actual": 82,
+      "baseline_forecast": 64.33333333333333,
+      "selected_forecast": 64.33333333333333,
+      "method": "mean12",
+      "unit_price": 14637.0
+    },
+    {
+      "Medication": "M09",
+      "MonthIndex": 44,
+      "actual": 69,
+      "baseline_forecast": 66.0,
+      "selected_forecast": 66.0,
+      "method": "mean12",
+      "unit_price": 14637.0
+    },
+    {
+      "Medication": "M09",
+      "MonthIndex": 45,
+      "actual": 71,
+      "baseline_forecast": 69.08333333333333,
+      "selected_forecast": 69.08333333333333,
+      "method": "mean12",
+      "unit_price": 14637.0
+    },
+    {
+      "Medication": "M09",
+      "MonthIndex": 46,
+      "actual": 111,
+      "baseline_forecast": 69.41666666666667,
+      "selected_forecast": 69.41666666666667,
+      "method": "mean12",
+      "unit_price": 14637.0
+    },
+    {
+      "Medication": "M09",
+      "MonthIndex": 47,
+      "actual": 101,
+      "baseline_forecast": 75.5,
+      "selected_forecast": 75.5,
+      "method": "mean12",
+      "unit_price": 14637.0
+    },
+    {
+      "Medication": "M09",
+      "MonthIndex": 48,
+      "actual": 48,
+      "baseline_forecast": 77.91666666666667,
+      "selected_forecast": 77.91666666666667,
+      "method": "mean12",
+      "unit_price": 14637.0
+    },
+    {
+      "Medication": "M10",
+      "MonthIndex": 37,
+      "actual": 0,
+      "baseline_forecast": 145.0,
+      "selected_forecast": 110.0,
+      "method": "mean6",
+      "unit_price": 2249.0
+    },
+    {
+      "Medication": "M10",
+      "MonthIndex": 38,
+      "actual": 360,
+      "baseline_forecast": 145.0,
+      "selected_forecast": 110.0,
+      "method": "mean6",
+      "unit_price": 2249.0
+    },
+    {
+      "Medication": "M10",
+      "MonthIndex": 39,
+      "actual": 0,
+      "baseline_forecast": 175.0,
+      "selected_forecast": 170.0,
+      "method": "mean6",
+      "unit_price": 2249.0
+    },
+    {
+      "Medication": "M10",
+      "MonthIndex": 40,
+      "actual": 100,
+      "baseline_forecast": 145.0,
+      "selected_forecast": 140.0,
+      "method": "mean6",
+      "unit_price": 2249.0
+    },
+    {
+      "Medication": "M10",
+      "MonthIndex": 41,
+      "actual": 680,
+      "baseline_forecast": 143.33333333333334,
+      "selected_forecast": 156.66666666666666,
+      "method": "mean6",
+      "unit_price": 2249.0
+    },
+    {
+      "Medication": "M10",
+      "MonthIndex": 42,
+      "actual": 10,
+      "baseline_forecast": 180.0,
+      "selected_forecast": 210.0,
+      "method": "mean6",
+      "unit_price": 2249.0
+    },
+    {
+      "Medication": "M10",
+      "MonthIndex": 43,
+      "actual": 0,
+      "baseline_forecast": 150.83333333333334,
+      "selected_forecast": 191.66666666666666,
+      "method": "mean6",
+      "unit_price": 2249.0
+    },
+    {
+      "Medication": "M10",
+      "MonthIndex": 44,
+      "actual": 720,
+      "baseline_forecast": 150.83333333333334,
+      "selected_forecast": 191.66666666666666,
+      "method": "mean6",
+      "unit_price": 2249.0
+    },
+    {
+      "Medication": "M10",
+      "MonthIndex": 45,
+      "actual": 180,
+      "baseline_forecast": 210.83333333333334,
+      "selected_forecast": 251.66666666666666,
+      "method": "mean6",
+      "unit_price": 2249.0
+    },
+    {
+      "Medication": "M10",
+      "MonthIndex": 46,
+      "actual": 0,
+      "baseline_forecast": 210.83333333333334,
+      "selected_forecast": 281.6666666666667,
+      "method": "mean6",
+      "unit_price": 2249.0
+    },
+    {
+      "Medication": "M10",
+      "MonthIndex": 47,
+      "actual": 400,
+      "baseline_forecast": 210.83333333333334,
+      "selected_forecast": 265.0,
+      "method": "mean6",
+      "unit_price": 2249.0
+    },
+    {
+      "Medication": "M10",
+      "MonthIndex": 48,
+      "actual": 400,
+      "baseline_forecast": 214.16666666666666,
+      "selected_forecast": 218.33333333333334,
+      "method": "mean6",
+      "unit_price": 2249.0
+    },
+    {
+      "Medication": "M11",
+      "MonthIndex": 37,
+      "actual": 90,
+      "baseline_forecast": 50.833333333333336,
+      "selected_forecast": 30.0,
+      "method": "seasonal",
+      "unit_price": 357.0
+    },
+    {
+      "Medication": "M11",
+      "MonthIndex": 38,
+      "actual": 20,
+      "baseline_forecast": 55.833333333333336,
+      "selected_forecast": 100.0,
+      "method": "seasonal",
+      "unit_price": 357.0
+    },
+    {
+      "Medication": "M11",
+      "MonthIndex": 39,
+      "actual": 0,
+      "baseline_forecast": 49.166666666666664,
+      "selected_forecast": 300.0,
+      "method": "seasonal",
+      "unit_price": 357.0
+    },
+    {
+      "Medication": "M11",
+      "MonthIndex": 40,
+      "actual": 0,
+      "baseline_forecast": 24.166666666666668,
+      "selected_forecast": 0.0,
+      "method": "seasonal",
+      "unit_price": 357.0
+    },
+    {
+      "Medication": "M11",
+      "MonthIndex": 41,
+      "actual": 270,
+      "baseline_forecast": 24.166666666666668,
+      "selected_forecast": 0.0,
+      "method": "seasonal",
+      "unit_price": 357.0
+    },
+    {
+      "Medication": "M11",
+      "MonthIndex": 42,
+      "actual": 0,
+      "baseline_forecast": 46.666666666666664,
+      "selected_forecast": 0.0,
+      "method": "seasonal",
+      "unit_price": 357.0
+    },
+    {
+      "Medication": "M11",
+      "MonthIndex": 43,
+      "actual": 0,
+      "baseline_forecast": 46.666666666666664,
+      "selected_forecast": 90.0,
+      "method": "seasonal",
+      "unit_price": 357.0
+    },
+    {
+      "Medication": "M11",
+      "MonthIndex": 44,
+      "actual": 270,
+      "baseline_forecast": 39.166666666666664,
+      "selected_forecast": 0.0,
+      "method": "seasonal",
+      "unit_price": 357.0
+    },
+    {
+      "Medication": "M11",
+      "MonthIndex": 45,
+      "actual": 140,
+      "baseline_forecast": 61.666666666666664,
+      "selected_forecast": 0.0,
+      "method": "seasonal",
+      "unit_price": 357.0
+    },
+    {
+      "Medication": "M11",
+      "MonthIndex": 46,
+      "actual": 220,
+      "baseline_forecast": 73.33333333333333,
+      "selected_forecast": 90.0,
+      "method": "seasonal",
+      "unit_price": 357.0
+    },
+    {
+      "Medication": "M11",
+      "MonthIndex": 47,
+      "actual": 90,
+      "baseline_forecast": 84.16666666666667,
+      "selected_forecast": 0.0,
+      "method": "seasonal",
+      "unit_price": 357.0
+    },
+    {
+      "Medication": "M11",
+      "MonthIndex": 48,
+      "actual": 0,
+      "baseline_forecast": 91.66666666666667,
+      "selected_forecast": 0.0,
+      "method": "seasonal",
+      "unit_price": 357.0
+    },
+    {
+      "Medication": "M12",
+      "MonthIndex": 37,
+      "actual": 0,
+      "baseline_forecast": 52.583333333333336,
+      "selected_forecast": 52.583333333333336,
+      "method": "mean12",
+      "unit_price": 95.0
+    },
+    {
+      "Medication": "M12",
+      "MonthIndex": 38,
+      "actual": 90,
+      "baseline_forecast": 52.583333333333336,
+      "selected_forecast": 52.583333333333336,
+      "method": "mean12",
+      "unit_price": 95.0
+    },
+    {
+      "Medication": "M12",
+      "MonthIndex": 39,
+      "actual": 20,
+      "baseline_forecast": 52.583333333333336,
+      "selected_forecast": 52.583333333333336,
+      "method": "mean12",
+      "unit_price": 95.0
+    },
+    {
+      "Medication": "M12",
+      "MonthIndex": 40,
+      "actual": 33,
+      "baseline_forecast": 54.25,
+      "selected_forecast": 54.25,
+      "method": "mean12",
+      "unit_price": 95.0
+    },
+    {
+      "Medication": "M12",
+      "MonthIndex": 41,
+      "actual": 90,
+      "baseline_forecast": 57.0,
+      "selected_forecast": 57.0,
+      "method": "mean12",
+      "unit_price": 95.0
+    },
+    {
+      "Medication": "M12",
+      "MonthIndex": 42,
+      "actual": 0,
+      "baseline_forecast": 64.5,
+      "selected_forecast": 64.5,
+      "method": "mean12",
+      "unit_price": 95.0
+    },
+    {
+      "Medication": "M12",
+      "MonthIndex": 43,
+      "actual": 0,
+      "baseline_forecast": 46.916666666666664,
+      "selected_forecast": 46.916666666666664,
+      "method": "mean12",
+      "unit_price": 95.0
+    },
+    {
+      "Medication": "M12",
+      "MonthIndex": 44,
+      "actual": 7,
+      "baseline_forecast": 41.916666666666664,
+      "selected_forecast": 41.916666666666664,
+      "method": "mean12",
+      "unit_price": 95.0
+    },
+    {
+      "Medication": "M12",
+      "MonthIndex": 45,
+      "actual": 144,
+      "baseline_forecast": 42.5,
+      "selected_forecast": 42.5,
+      "method": "mean12",
+      "unit_price": 95.0
+    },
+    {
+      "Medication": "M12",
+      "MonthIndex": 46,
+      "actual": 170,
+      "baseline_forecast": 47.0,
+      "selected_forecast": 47.0,
+      "method": "mean12",
+      "unit_price": 95.0
+    },
+    {
+      "Medication": "M12",
+      "MonthIndex": 47,
+      "actual": 0,
+      "baseline_forecast": 56.75,
+      "selected_forecast": 56.75,
+      "method": "mean12",
+      "unit_price": 95.0
+    },
+    {
+      "Medication": "M12",
+      "MonthIndex": 48,
+      "actual": 0,
+      "baseline_forecast": 53.666666666666664,
+      "selected_forecast": 53.666666666666664,
+      "method": "mean12",
+      "unit_price": 95.0
+    },
+    {
+      "Medication": "M13",
+      "MonthIndex": 37,
+      "actual": 0,
+      "baseline_forecast": 68.33333333333333,
+      "selected_forecast": 0.0,
+      "method": "mean3",
+      "unit_price": 440.0
+    },
+    {
+      "Medication": "M13",
+      "MonthIndex": 38,
+      "actual": 0,
+      "baseline_forecast": 54.166666666666664,
+      "selected_forecast": 0.0,
+      "method": "mean3",
+      "unit_price": 440.0
+    },
+    {
+      "Medication": "M13",
+      "MonthIndex": 39,
+      "actual": 120,
+      "baseline_forecast": 51.666666666666664,
+      "selected_forecast": 0.0,
+      "method": "mean3",
+      "unit_price": 440.0
+    },
+    {
+      "Medication": "M13",
+      "MonthIndex": 40,
+      "actual": 0,
+      "baseline_forecast": 41.666666666666664,
+      "selected_forecast": 40.0,
+      "method": "mean3",
+      "unit_price": 440.0
+    },
+    {
+      "Medication": "M13",
+      "MonthIndex": 41,
+      "actual": 0,
+      "baseline_forecast": 36.666666666666664,
+      "selected_forecast": 40.0,
+      "method": "mean3",
+      "unit_price": 440.0
+    },
+    {
+      "Medication": "M13",
+      "MonthIndex": 42,
+      "actual": 0,
+      "baseline_forecast": 35.0,
+      "selected_forecast": 40.0,
+      "method": "mean3",
+      "unit_price": 440.0
+    },
+    {
+      "Medication": "M13",
+      "MonthIndex": 43,
+      "actual": 0,
+      "baseline_forecast": 35.0,
+      "selected_forecast": 0.0,
+      "method": "mean3",
+      "unit_price": 440.0
+    },
+    {
+      "Medication": "M13",
+      "MonthIndex": 44,
+      "actual": 0,
+      "baseline_forecast": 10.0,
+      "selected_forecast": 0.0,
+      "method": "mean3",
+      "unit_price": 440.0
+    },
+    {
+      "Medication": "M13",
+      "MonthIndex": 45,
+      "actual": 90,
+      "baseline_forecast": 10.0,
+      "selected_forecast": 0.0,
+      "method": "mean3",
+      "unit_price": 440.0
+    },
+    {
+      "Medication": "M13",
+      "MonthIndex": 46,
+      "actual": 0,
+      "baseline_forecast": 17.5,
+      "selected_forecast": 30.0,
+      "method": "mean3",
+      "unit_price": 440.0
+    },
+    {
+      "Medication": "M13",
+      "MonthIndex": 47,
+      "actual": 0,
+      "baseline_forecast": 17.5,
+      "selected_forecast": 30.0,
+      "method": "mean3",
+      "unit_price": 440.0
+    },
+    {
+      "Medication": "M13",
+      "MonthIndex": 48,
+      "actual": 0,
+      "baseline_forecast": 17.5,
+      "selected_forecast": 30.0,
+      "method": "mean3",
+      "unit_price": 440.0
+    }
+  ],
+  "validation_scores": [
+    {
+      "Medication": "M01",
+      "method": "mean12",
+      "method_name": "近12月均值",
+      "validation_mae": 12493.194444444443
+    },
+    {
+      "Medication": "M01",
+      "method": "mean6",
+      "method_name": "近6月均值",
+      "validation_mae": 12245.694444444447
+    },
+    {
+      "Medication": "M01",
+      "method": "mean3",
+      "method_name": "近3月均值",
+      "validation_mae": 12860.27777777778
+    },
+    {
+      "Medication": "M01",
+      "method": "ses",
+      "method_name": "指数平滑",
+      "validation_mae": 12997.108300443519
+    },
+    {
+      "Medication": "M01",
+      "method": "seasonal",
+      "method_name": "上一年同月",
+      "validation_mae": 12645.833333333334
+    },
+    {
+      "Medication": "M01",
+      "method": "tsb",
+      "method_name": "间歇需求分解",
+      "validation_mae": 12660.196028763936
+    },
+    {
+      "Medication": "M02",
+      "method": "mean12",
+      "method_name": "近12月均值",
+      "validation_mae": 125.3333333333333
+    },
+    {
+      "Medication": "M02",
+      "method": "mean6",
+      "method_name": "近6月均值",
+      "validation_mae": 140.18055555555557
+    },
+    {
+      "Medication": "M02",
+      "method": "mean3",
+      "method_name": "近3月均值",
+      "validation_mae": 160.41666666666666
+    },
+    {
+      "Medication": "M02",
+      "method": "ses",
+      "method_name": "指数平滑",
+      "validation_mae": 159.29133744964886
+    },
+    {
+      "Medication": "M02",
+      "method": "seasonal",
+      "method_name": "上一年同月",
+      "validation_mae": 190.83333333333334
+    },
+    {
+      "Medication": "M02",
+      "method": "tsb",
+      "method_name": "间歇需求分解",
+      "validation_mae": 146.40524975589233
+    },
+    {
+      "Medication": "M03",
+      "method": "mean12",
+      "method_name": "近12月均值",
+      "validation_mae": 123.19444444444446
+    },
+    {
+      "Medication": "M03",
+      "method": "mean6",
+      "method_name": "近6月均值",
+      "validation_mae": 80.30555555555556
+    },
+    {
+      "Medication": "M03",
+      "method": "mean3",
+      "method_name": "近3月均值",
+      "validation_mae": 64.80555555555556
+    },
+    {
+      "Medication": "M03",
+      "method": "ses",
+      "method_name": "指数平滑",
+      "validation_mae": 85.05768906643324
+    },
+    {
+      "Medication": "M03",
+      "method": "seasonal",
+      "method_name": "上一年同月",
+      "validation_mae": 205.33333333333334
+    },
+    {
+      "Medication": "M03",
+      "method": "tsb",
+      "method_name": "间歇需求分解",
+      "validation_mae": 99.50714090013757
+    },
+    {
+      "Medication": "M04",
+      "method": "mean12",
+      "method_name": "近12月均值",
+      "validation_mae": 14205.687499999998
+    },
+    {
+      "Medication": "M04",
+      "method": "mean6",
+      "method_name": "近6月均值",
+      "validation_mae": 14628.19444444444
+    },
+    {
+      "Medication": "M04",
+      "method": "mean3",
+      "method_name": "近3月均值",
+      "validation_mae": 14171.250000000002
+    },
+    {
+      "Medication": "M04",
+      "method": "ses",
+      "method_name": "指数平滑",
+      "validation_mae": 14265.976787298778
+    },
+    {
+      "Medication": "M04",
+      "method": "seasonal",
+      "method_name": "上一年同月",
+      "validation_mae": 17395.75
+    },
+    {
+      "Medication": "M04",
+      "method": "tsb",
+      "method_name": "间歇需求分解",
+      "validation_mae": 14402.86508006091
+    },
+    {
+      "Medication": "M05",
+      "method": "mean12",
+      "method_name": "近12月均值",
+      "validation_mae": 5267.562499999999
+    },
+    {
+      "Medication": "M05",
+      "method": "mean6",
+      "method_name": "近6月均值",
+      "validation_mae": 5903.4861111111095
+    },
+    {
+      "Medication": "M05",
+      "method": "mean3",
+      "method_name": "近3月均值",
+      "validation_mae": 5458.25
+    },
+    {
+      "Medication": "M05",
+      "method": "ses",
+      "method_name": "指数平滑",
+      "validation_mae": 6131.0335371138835
+    },
+    {
+      "Medication": "M05",
+      "method": "seasonal",
+      "method_name": "上一年同月",
+      "validation_mae": 4302.333333333333
+    },
+    {
+      "Medication": "M05",
+      "method": "tsb",
+      "method_name": "间歇需求分解",
+      "validation_mae": 5793.4555457987335
+    },
+    {
+      "Medication": "M06",
+      "method": "mean12",
+      "method_name": "近12月均值",
+      "validation_mae": 150.0
+    },
+    {
+      "Medication": "M06",
+      "method": "mean6",
+      "method_name": "近6月均值",
+      "validation_mae": 128.54166666666666
+    },
+    {
+      "Medication": "M06",
+      "method": "mean3",
+      "method_name": "近3月均值",
+      "validation_mae": 127.91666666666667
+    },
+    {
+      "Medication": "M06",
+      "method": "ses",
+      "method_name": "指数平滑",
+      "validation_mae": 139.73779633471577
+    },
+    {
+      "Medication": "M06",
+      "method": "seasonal",
+      "method_name": "上一年同月",
+      "validation_mae": 283.75
+    },
+    {
+      "Medication": "M06",
+      "method": "tsb",
+      "method_name": "间歇需求分解",
+      "validation_mae": 146.37669332596462
+    },
+    {
+      "Medication": "M07",
+      "method": "mean12",
+      "method_name": "近12月均值",
+      "validation_mae": 146.18055555555557
+    },
+    {
+      "Medication": "M07",
+      "method": "mean6",
+      "method_name": "近6月均值",
+      "validation_mae": 161.11111111111111
+    },
+    {
+      "Medication": "M07",
+      "method": "mean3",
+      "method_name": "近3月均值",
+      "validation_mae": 155.0
+    },
+    {
+      "Medication": "M07",
+      "method": "ses",
+      "method_name": "指数平滑",
+      "validation_mae": 153.31187632111798
+    },
+    {
+      "Medication": "M07",
+      "method": "seasonal",
+      "method_name": "上一年同月",
+      "validation_mae": 136.66666666666666
+    },
+    {
+      "Medication": "M07",
+      "method": "tsb",
+      "method_name": "间歇需求分解",
+      "validation_mae": 150.28606055989482
+    },
+    {
+      "Medication": "M08",
+      "method": "mean12",
+      "method_name": "近12月均值",
+      "validation_mae": 75.28472222222224
+    },
+    {
+      "Medication": "M08",
+      "method": "mean6",
+      "method_name": "近6月均值",
+      "validation_mae": 75.66666666666667
+    },
+    {
+      "Medication": "M08",
+      "method": "mean3",
+      "method_name": "近3月均值",
+      "validation_mae": 81.61111111111111
+    },
+    {
+      "Medication": "M08",
+      "method": "ses",
+      "method_name": "指数平滑",
+      "validation_mae": 79.07264870636645
+    },
+    {
+      "Medication": "M08",
+      "method": "seasonal",
+      "method_name": "上一年同月",
+      "validation_mae": 80.08333333333333
+    },
+    {
+      "Medication": "M08",
+      "method": "tsb",
+      "method_name": "间歇需求分解",
+      "validation_mae": 76.51906043604738
+    },
+    {
+      "Medication": "M09",
+      "method": "mean12",
+      "method_name": "近12月均值",
+      "validation_mae": 13.444444444444445
+    },
+    {
+      "Medication": "M09",
+      "method": "mean6",
+      "method_name": "近6月均值",
+      "validation_mae": 14.58333333333333
+    },
+    {
+      "Medication": "M09",
+      "method": "mean3",
+      "method_name": "近3月均值",
+      "validation_mae": 16.305555555555554
+    },
+    {
+      "Medication": "M09",
+      "method": "ses",
+      "method_name": "指数平滑",
+      "validation_mae": 14.955231150506501
+    },
+    {
+      "Medication": "M09",
+      "method": "seasonal",
+      "method_name": "上一年同月",
+      "validation_mae": 16.833333333333332
+    },
+    {
+      "Medication": "M09",
+      "method": "tsb",
+      "method_name": "间歇需求分解",
+      "validation_mae": 14.04469328821502
+    },
+    {
+      "Medication": "M10",
+      "method": "mean12",
+      "method_name": "近12月均值",
+      "validation_mae": 135.34722222222223
+    },
+    {
+      "Medication": "M10",
+      "method": "mean6",
+      "method_name": "近6月均值",
+      "validation_mae": 135.0
+    },
+    {
+      "Medication": "M10",
+      "method": "mean3",
+      "method_name": "近3月均值",
+      "validation_mae": 153.33333333333334
+    },
+    {
+      "Medication": "M10",
+      "method": "ses",
+      "method_name": "指数平滑",
+      "validation_mae": 147.53106187090196
+    },
+    {
+      "Medication": "M10",
+      "method": "seasonal",
+      "method_name": "上一年同月",
+      "validation_mae": 185.83333333333334
+    },
+    {
+      "Medication": "M10",
+      "method": "tsb",
+      "method_name": "间歇需求分解",
+      "validation_mae": 138.27579737299257
+    },
+    {
+      "Medication": "M11",
+      "method": "mean12",
+      "method_name": "近12月均值",
+      "validation_mae": 65.0
+    },
+    {
+      "Medication": "M11",
+      "method": "mean6",
+      "method_name": "近6月均值",
+      "validation_mae": 72.77777777777779
+    },
+    {
+      "Medication": "M11",
+      "method": "mean3",
+      "method_name": "近3月均值",
+      "validation_mae": 82.77777777777779
+    },
+    {
+      "Medication": "M11",
+      "method": "ses",
+      "method_name": "指数平滑",
+      "validation_mae": 73.44547392730075
+    },
+    {
+      "Medication": "M11",
+      "method": "seasonal",
+      "method_name": "上一年同月",
+      "validation_mae": 38.333333333333336
+    },
+    {
+      "Medication": "M11",
+      "method": "tsb",
+      "method_name": "间歇需求分解",
+      "validation_mae": 70.52001514651532
+    },
+    {
+      "Medication": "M12",
+      "method": "mean12",
+      "method_name": "近12月均值",
+      "validation_mae": 43.923611111111114
+    },
+    {
+      "Medication": "M12",
+      "method": "mean6",
+      "method_name": "近6月均值",
+      "validation_mae": 47.90277777777778
+    },
+    {
+      "Medication": "M12",
+      "method": "mean3",
+      "method_name": "近3月均值",
+      "validation_mae": 47.138888888888886
+    },
+    {
+      "Medication": "M12",
+      "method": "ses",
+      "method_name": "指数平滑",
+      "validation_mae": 49.1735795828867
+    },
+    {
+      "Medication": "M12",
+      "method": "seasonal",
+      "method_name": "上一年同月",
+      "validation_mae": 56.75
+    },
+    {
+      "Medication": "M12",
+      "method": "tsb",
+      "method_name": "间歇需求分解",
+      "validation_mae": 46.60430853995325
+    },
+    {
+      "Medication": "M13",
+      "method": "mean12",
+      "method_name": "近12月均值",
+      "validation_mae": 111.18055555555556
+    },
+    {
+      "Medication": "M13",
+      "method": "mean6",
+      "method_name": "近6月均值",
+      "validation_mae": 96.94444444444444
+    },
+    {
+      "Medication": "M13",
+      "method": "mean3",
+      "method_name": "近3月均值",
+      "validation_mae": 88.8888888888889
+    },
+    {
+      "Medication": "M13",
+      "method": "ses",
+      "method_name": "指数平滑",
+      "validation_mae": 97.96922992867762
+    },
+    {
+      "Medication": "M13",
+      "method": "seasonal",
+      "method_name": "上一年同月",
+      "validation_mae": 126.66666666666667
+    },
+    {
+      "Medication": "M13",
+      "method": "tsb",
+      "method_name": "间歇需求分解",
+      "validation_mae": 100.61671502647266
+    }
+  ],
+  "simulation": {
+    "lead_months": 1,
+    "summaries": {
+      "baseline": {
+        "average_stock_value": 96854149.625,
+        "turnover": 8.360873087372378,
+        "holding_cost": 19370829.925000004,
+        "ordering_cost": 2132828.397,
+        "operating_cost": 21503658.322000004,
+        "ordered_value": 755357003.0,
+        "received_value": 679622652.0,
+        "closing_value": 56714218.0,
+        "pending_value": 75734351.0,
+        "weighted_fill_rate": 0.9872169462120046,
+        "shortage_skus": 7,
+        "shortage_item_months": 21,
+        "order_count": 105
+      },
+      "optimized": {
+        "average_stock_value": 64770664.458333336,
+        "turnover": 12.478069628572662,
+        "holding_cost": 12954132.891666668,
+        "ordering_cost": 2315642.2596000005,
+        "operating_cost": 15269775.151266668,
+        "ordered_value": 719938509.0,
+        "received_value": 640808022.0,
+        "closing_value": 19471980.0,
+        "pending_value": 79130487.0,
+        "weighted_fill_rate": 0.985300028087431,
+        "shortage_skus": 6,
+        "shortage_item_months": 13,
+        "order_count": 114
+      }
+    },
+    "changes": {
+      "turnover_improvement_pct": 49.24361963367896,
+      "stock_reduction_pct": 33.12556590593954,
+      "operating_cost_reduction_pct": 28.989872687642006,
+      "fill_rate_change_pp": -0.1916918124573619
+    },
+    "monthly": [
+      {
+        "MonthIndex": 37,
+        "average_stock_value": 156330247.0,
+        "holding_cost": 2605504.1166666667,
+        "ordering_cost": 0.0,
+        "consumption_value": 61093144.0,
+        "demand_value": 61093144.0,
+        "closing_value": 125783675.0,
+        "policy": "baseline"
+      },
+      {
+        "MonthIndex": 38,
+        "average_stock_value": 98152701.0,
+        "holding_cost": 1635878.35,
+        "ordering_cost": 142188.5598,
+        "consumption_value": 55261948.0,
+        "demand_value": 55261948.0,
+        "closing_value": 70521727.0,
+        "policy": "baseline"
+      },
+      {
+        "MonthIndex": 39,
+        "average_stock_value": 95962818.0,
+        "holding_cost": 1599380.3,
+        "ordering_cost": 182813.8626,
+        "consumption_value": 73260500.0,
+        "demand_value": 73260500.0,
+        "closing_value": 59332568.0,
+        "policy": "baseline"
+      },
+      {
+        "MonthIndex": 40,
+        "average_stock_value": 86007819.5,
+        "holding_cost": 1433463.6583333332,
+        "ordering_cost": 223439.1654,
+        "consumption_value": 59193263.0,
+        "demand_value": 59193263.0,
+        "closing_value": 56411188.0,
+        "policy": "baseline"
+      },
+      {
+        "MonthIndex": 41,
+        "average_stock_value": 97254900.5,
+        "holding_cost": 1620915.0083333335,
+        "ordering_cost": 203126.514,
+        "consumption_value": 65864037.0,
+        "demand_value": 66656730.0,
+        "closing_value": 64322882.0,
+        "policy": "baseline"
+      },
+      {
+        "MonthIndex": 42,
+        "average_stock_value": 92318825.5,
+        "holding_cost": 1538647.0916666668,
+        "ordering_cost": 203126.514,
+        "consumption_value": 64418917.0,
+        "demand_value": 64517984.0,
+        "closing_value": 60109367.0,
+        "policy": "baseline"
+      },
+      {
+        "MonthIndex": 43,
+        "average_stock_value": 90865817.0,
+        "holding_cost": 1514430.2833333334,
+        "ordering_cost": 162501.2112,
+        "consumption_value": 72363788.0,
+        "demand_value": 72453188.0,
+        "closing_value": 54683923.0,
+        "policy": "baseline"
+      },
+      {
+        "MonthIndex": 44,
+        "average_stock_value": 81584250.5,
+        "holding_cost": 1359737.5083333333,
+        "ordering_cost": 162501.2112,
+        "consumption_value": 76133725.0,
+        "demand_value": 79871615.0,
+        "closing_value": 43517388.0,
+        "policy": "baseline"
+      },
+      {
+        "MonthIndex": 45,
+        "average_stock_value": 87040630.0,
+        "holding_cost": 1450677.1666666667,
+        "ordering_cost": 203126.514,
+        "consumption_value": 63384270.0,
+        "demand_value": 63839070.0,
+        "closing_value": 55348495.0,
+        "policy": "baseline"
+      },
+      {
+        "MonthIndex": 46,
+        "average_stock_value": 97646657.5,
+        "holding_cost": 1627444.2916666667,
+        "ordering_cost": 223439.1654,
+        "consumption_value": 74510867.0,
+        "demand_value": 74676912.0,
+        "closing_value": 60391224.0,
+        "policy": "baseline"
+      },
+      {
+        "MonthIndex": 47,
+        "average_stock_value": 86801339.5,
+        "holding_cost": 1446688.9916666667,
+        "ordering_cost": 223439.1654,
+        "consumption_value": 73161651.0,
+        "demand_value": 77921743.0,
+        "closing_value": 50220514.0,
+        "policy": "baseline"
+      },
+      {
+        "MonthIndex": 48,
+        "average_stock_value": 92283789.5,
+        "holding_cost": 1538063.1583333334,
+        "ordering_cost": 203126.514,
+        "consumption_value": 71139143.0,
+        "demand_value": 71524722.0,
+        "closing_value": 56714218.0,
+        "policy": "baseline"
+      },
+      {
+        "MonthIndex": 37,
+        "average_stock_value": 156330247.0,
+        "holding_cost": 2605504.1166666667,
+        "ordering_cost": 162501.2112,
+        "consumption_value": 61093144.0,
+        "demand_value": 61093144.0,
+        "closing_value": 125783675.0,
+        "policy": "optimized"
+      },
+      {
+        "MonthIndex": 38,
+        "average_stock_value": 98847359.0,
+        "holding_cost": 1647455.9833333334,
+        "ordering_cost": 121875.90839999999,
+        "consumption_value": 55261948.0,
+        "demand_value": 55261948.0,
+        "closing_value": 71216385.0,
+        "policy": "optimized"
+      },
+      {
+        "MonthIndex": 39,
+        "average_stock_value": 57580753.0,
+        "holding_cost": 959679.2166666667,
+        "ordering_cost": 203126.514,
+        "consumption_value": 73260500.0,
+        "demand_value": 73260500.0,
+        "closing_value": 20950503.0,
+        "policy": "optimized"
+      },
+      {
+        "MonthIndex": 40,
+        "average_stock_value": 44980912.5,
+        "holding_cost": 749681.875,
+        "ordering_cost": 203126.514,
+        "consumption_value": 59193263.0,
+        "demand_value": 59193263.0,
+        "closing_value": 15384281.0,
+        "policy": "optimized"
+      },
+      {
+        "MonthIndex": 41,
+        "average_stock_value": 57375219.0,
+        "holding_cost": 956253.6500000001,
+        "ordering_cost": 203126.514,
+        "consumption_value": 66341870.0,
+        "demand_value": 66656730.0,
+        "closing_value": 24204284.0,
+        "policy": "optimized"
+      },
+      {
+        "MonthIndex": 42,
+        "average_stock_value": 48328266.5,
+        "holding_cost": 805471.1083333334,
+        "ordering_cost": 182813.8626,
+        "consumption_value": 61665137.0,
+        "demand_value": 64517984.0,
+        "closing_value": 17495698.0,
+        "policy": "optimized"
+      },
+      {
+        "MonthIndex": 43,
+        "average_stock_value": 50711550.5,
+        "holding_cost": 845192.5083333333,
+        "ordering_cost": 223439.1654,
+        "consumption_value": 69274005.0,
+        "demand_value": 72453188.0,
+        "closing_value": 16074548.0,
+        "policy": "optimized"
+      },
+      {
+        "MonthIndex": 44,
+        "average_stock_value": 42859411.0,
+        "holding_cost": 714323.5166666667,
+        "ordering_cost": 182813.8626,
+        "consumption_value": 75218846.0,
+        "demand_value": 79871615.0,
+        "closing_value": 5249988.0,
+        "policy": "optimized"
+      },
+      {
+        "MonthIndex": 45,
+        "average_stock_value": 48840447.0,
+        "holding_cost": 814007.4500000001,
+        "ordering_cost": 203126.514,
+        "consumption_value": 63501720.0,
+        "demand_value": 63839070.0,
+        "closing_value": 17089587.0,
+        "policy": "optimized"
+      },
+      {
+        "MonthIndex": 46,
+        "average_stock_value": 65280729.0,
+        "holding_cost": 1088012.15,
+        "ordering_cost": 223439.1654,
+        "consumption_value": 74636024.0,
+        "demand_value": 74676912.0,
+        "closing_value": 27962717.0,
+        "policy": "optimized"
+      },
+      {
+        "MonthIndex": 47,
+        "average_stock_value": 50878738.0,
+        "holding_cost": 847978.9666666667,
+        "ordering_cost": 203126.514,
+        "consumption_value": 77241682.0,
+        "demand_value": 77921743.0,
+        "closing_value": 12257897.0,
+        "policy": "optimized"
+      },
+      {
+        "MonthIndex": 48,
+        "average_stock_value": 55234341.0,
+        "holding_cost": 920572.3500000001,
+        "ordering_cost": 203126.514,
+        "consumption_value": 71524722.0,
+        "demand_value": 71524722.0,
+        "closing_value": 19471980.0,
+        "policy": "optimized"
+      }
+    ],
+    "items": [
+      {
+        "Medication": "M01",
+        "policy": "baseline",
+        "fill_rate": 1.0,
+        "average_stock_value": 46265219.666666664,
+        "operating_cost": 9476483.098733334,
+        "shortage_qty": 0,
+        "closing_stock": 205775
+      },
+      {
+        "Medication": "M02",
+        "policy": "baseline",
+        "fill_rate": 1.0,
+        "average_stock_value": 28937668.625,
+        "operating_cost": 6010972.8904,
+        "shortage_qty": 0,
+        "closing_stock": 2111
+      },
+      {
+        "Medication": "M03",
+        "policy": "baseline",
+        "fill_rate": 0.963660313032698,
+        "average_stock_value": 14684077.375,
+        "operating_cost": 3160254.6404000004,
+        "shortage_qty": 469,
+        "closing_stock": 321
+      },
+      {
+        "Medication": "M04",
+        "policy": "baseline",
+        "fill_rate": 1.0,
+        "average_stock_value": 3328569.2916666665,
+        "operating_cost": 889153.0237333335,
+        "shortage_qty": 0,
+        "closing_stock": 207413
+      },
+      {
+        "Medication": "M05",
+        "policy": "baseline",
+        "fill_rate": 1.0,
+        "average_stock_value": 1521849.3333333333,
+        "operating_cost": 527809.0320666666,
+        "shortage_qty": 0,
+        "closing_stock": 72788
+      },
+      {
+        "Medication": "M06",
+        "policy": "baseline",
+        "fill_rate": 0.6974789915966386,
+        "average_stock_value": 120963.16666666667,
+        "operating_cost": 207006.49593333332,
+        "shortage_qty": 540,
+        "closing_stock": 372
+      },
+      {
+        "Medication": "M07",
+        "policy": "baseline",
+        "fill_rate": 1.0,
+        "average_stock_value": 198191.0,
+        "operating_cost": 120888.8056,
+        "shortage_qty": 0,
+        "closing_stock": 283
+      },
+      {
+        "Medication": "M08",
+        "policy": "baseline",
+        "fill_rate": 0.910266774454325,
+        "average_stock_value": 27538.583333333332,
+        "operating_cost": 147696.27646666666,
+        "shortage_qty": 111,
+        "closing_stock": 0
+      },
+      {
+        "Medication": "M09",
+        "policy": "baseline",
+        "fill_rate": 0.9770240700218819,
+        "average_stock_value": 1032518.375,
+        "operating_cost": 429942.8404,
+        "shortage_qty": 21,
+        "closing_stock": 81
+      },
+      {
+        "Medication": "M10",
+        "policy": "baseline",
+        "fill_rate": 0.7221052631578947,
+        "average_stock_value": 644713.3333333334,
+        "operating_cost": 230505.92366666667,
+        "shortage_qty": 792,
+        "closing_stock": 0
+      },
+      {
+        "Medication": "M11",
+        "policy": "baseline",
+        "fill_rate": 0.5618181818181818,
+        "average_stock_value": 31802.75,
+        "operating_cost": 128236.4584,
+        "shortage_qty": 482,
+        "closing_stock": 218
+      },
+      {
+        "Medication": "M12",
+        "policy": "baseline",
+        "fill_rate": 0.7707581227436823,
+        "average_stock_value": 11134.791666666666,
+        "operating_cost": 124102.86673333333,
+        "shortage_qty": 127,
+        "closing_stock": 171
+      },
+      {
+        "Medication": "M13",
+        "policy": "baseline",
+        "fill_rate": 1.0,
+        "average_stock_value": 49903.333333333336,
+        "operating_cost": 50605.96946666666,
+        "shortage_qty": 0,
+        "closing_stock": 53
+      },
+      {
+        "Medication": "M01",
+        "policy": "optimized",
+        "fill_rate": 1.0,
+        "average_stock_value": 26135969.5,
+        "operating_cost": 5450633.065400001,
+        "shortage_qty": 0,
+        "closing_stock": 23938
+      },
+      {
+        "Medication": "M02",
+        "policy": "optimized",
+        "fill_rate": 1.0,
+        "average_stock_value": 19359278.291666668,
+        "operating_cost": 4095294.823733334,
+        "shortage_qty": 0,
+        "closing_stock": 765
+      },
+      {
+        "Medication": "M03",
+        "policy": "optimized",
+        "fill_rate": 0.9495583449558345,
+        "average_stock_value": 13357114.375,
+        "operating_cost": 2894862.0404,
+        "shortage_qty": 651,
+        "closing_stock": 341
+      },
+      {
+        "Medication": "M04",
+        "policy": "optimized",
+        "fill_rate": 1.0,
+        "average_stock_value": 1928135.4583333333,
+        "operating_cost": 609066.2570666666,
+        "shortage_qty": 0,
+        "closing_stock": 55512
+      },
+      {
+        "Medication": "M05",
+        "policy": "optimized",
+        "fill_rate": 1.0,
+        "average_stock_value": 1149724.3333333333,
+        "operating_cost": 433071.38066666666,
+        "shortage_qty": 0,
+        "closing_stock": 43597
+      },
+      {
+        "Medication": "M06",
+        "policy": "optimized",
+        "fill_rate": 0.8252100840336134,
+        "average_stock_value": 177185.83333333334,
+        "operating_cost": 177625.72646666665,
+        "shortage_qty": 312,
+        "closing_stock": 665
+      },
+      {
+        "Medication": "M07",
+        "policy": "optimized",
+        "fill_rate": 1.0,
+        "average_stock_value": 330506.1666666667,
+        "operating_cost": 167664.49033333332,
+        "shortage_qty": 0,
+        "closing_stock": 1080
+      },
+      {
+        "Medication": "M08",
+        "policy": "optimized",
+        "fill_rate": 1.0,
+        "average_stock_value": 34862.041666666664,
+        "operating_cost": 230411.57373333332,
+        "shortage_qty": 0,
+        "closing_stock": 12
+      },
+      {
+        "Medication": "M09",
+        "policy": "optimized",
+        "fill_rate": 0.9814004376367614,
+        "average_stock_value": 1095945.375,
+        "operating_cost": 462940.8918,
+        "shortage_qty": 17,
+        "closing_stock": 75
+      },
+      {
+        "Medication": "M10",
+        "policy": "optimized",
+        "fill_rate": 0.8982456140350877,
+        "average_stock_value": 958823.6666666666,
+        "operating_cost": 354265.9445333333,
+        "shortage_qty": 290,
+        "closing_stock": 246
+      },
+      {
+        "Medication": "M11",
+        "policy": "optimized",
+        "fill_rate": 0.9181818181818182,
+        "average_stock_value": 112574.0,
+        "operating_cost": 164703.35979999998,
+        "shortage_qty": 90,
+        "closing_stock": 341
+      },
+      {
+        "Medication": "M12",
+        "policy": "optimized",
+        "fill_rate": 0.924187725631769,
+        "average_stock_value": 18675.416666666668,
+        "operating_cost": 145923.64313333333,
+        "shortage_qty": 42,
+        "closing_stock": 321
+      },
+      {
+        "Medication": "M13",
+        "policy": "optimized",
+        "fill_rate": 1.0,
+        "average_stock_value": 111870.0,
+        "operating_cost": 83311.9542,
+        "shortage_qty": 0,
+        "closing_stock": 253
+      }
+    ]
+  },
+  "stress": {
+    "lead_months": 2,
+    "summaries": {
+      "baseline": {
+        "average_stock_value": 52513544.5,
+        "turnover": 14.118225022879573,
+        "holding_cost": 10502708.9,
+        "ordering_cost": 2092203.0941999997,
+        "operating_cost": 12594911.9942,
+        "ordered_value": 697661695.0,
+        "received_value": 558304770.0,
+        "closing_value": 3783551.0,
+        "pending_value": 139356925.0,
+        "weighted_fill_rate": 0.9038454383929511,
+        "shortage_skus": 10,
+        "shortage_item_months": 45,
+        "order_count": 103
+      },
+      "optimized": {
+        "average_stock_value": 69026947.75,
+        "turnover": 11.639123272693164,
+        "holding_cost": 13805389.550000003,
+        "ordering_cost": 2315642.2596,
+        "operating_cost": 16121031.809600003,
+        "ordered_value": 799171526.0,
+        "received_value": 641288966.0,
+        "closing_value": 24752631.0,
+        "pending_value": 157882560.0,
+        "weighted_fill_rate": 0.979448659382335,
+        "shortage_skus": 5,
+        "shortage_item_months": 9,
+        "order_count": 114
+      }
+    },
+    "changes": {
+      "turnover_improvement_pct": -17.559585189843986,
+      "stock_reduction_pct": -31.445988662981982,
+      "operating_cost_reduction_pct": -27.996383119022926,
+      "fill_rate_change_pp": 7.560322098938399
+    },
+    "monthly": [
+      {
+        "MonthIndex": 37,
+        "average_stock_value": 156330247.0,
+        "holding_cost": 2605504.1166666667,
+        "ordering_cost": 0.0,
+        "consumption_value": 61093144.0,
+        "demand_value": 61093144.0,
+        "closing_value": 125783675.0,
+        "policy": "baseline"
+      },
+      {
+        "MonthIndex": 38,
+        "average_stock_value": 98152701.0,
+        "holding_cost": 1635878.35,
+        "ordering_cost": 142188.5598,
+        "consumption_value": 55261948.0,
+        "demand_value": 55261948.0,
+        "closing_value": 70521727.0,
+        "policy": "baseline"
+      },
+      {
+        "MonthIndex": 39,
+        "average_stock_value": 38530145.5,
+        "holding_cost": 642169.0916666667,
+        "ordering_cost": 182813.8626,
+        "consumption_value": 63983163.0,
+        "demand_value": 73260500.0,
+        "closing_value": 6538564.0,
+        "policy": "baseline"
+      },
+      {
+        "MonthIndex": 40,
+        "average_stock_value": 39392341.0,
+        "holding_cost": 656539.0166666667,
+        "ordering_cost": 223439.1654,
+        "consumption_value": 58435128.0,
+        "demand_value": 59193263.0,
+        "closing_value": 10174777.0,
+        "policy": "baseline"
+      },
+      {
+        "MonthIndex": 41,
+        "average_stock_value": 34299232.0,
+        "holding_cost": 571653.8666666667,
+        "ordering_cost": 182813.8626,
+        "consumption_value": 64294856.0,
+        "demand_value": 66656730.0,
+        "closing_value": 2151804.0,
+        "policy": "baseline"
+      },
+      {
+        "MonthIndex": 42,
+        "average_stock_value": 38161611.5,
+        "holding_cost": 636026.8583333334,
+        "ordering_cost": 203126.514,
+        "consumption_value": 56977173.0,
+        "demand_value": 64517984.0,
+        "closing_value": 9673025.0,
+        "policy": "baseline"
+      },
+      {
+        "MonthIndex": 43,
+        "average_stock_value": 37866360.5,
+        "holding_cost": 631106.0083333333,
+        "ordering_cost": 162501.2112,
+        "consumption_value": 62597823.0,
+        "demand_value": 72453188.0,
+        "closing_value": 6567449.0,
+        "policy": "baseline"
+      },
+      {
+        "MonthIndex": 44,
+        "average_stock_value": 38004698.5,
+        "holding_cost": 633411.6416666667,
+        "ordering_cost": 162501.2112,
+        "consumption_value": 67773867.0,
+        "demand_value": 79871615.0,
+        "closing_value": 4117765.0,
+        "policy": "baseline"
+      },
+      {
+        "MonthIndex": 45,
+        "average_stock_value": 33218728.5,
+        "holding_cost": 553645.4750000001,
+        "ordering_cost": 203126.514,
+        "consumption_value": 56871455.0,
+        "demand_value": 63839070.0,
+        "closing_value": 4783001.0,
+        "policy": "baseline"
+      },
+      {
+        "MonthIndex": 46,
+        "average_stock_value": 38921878.5,
+        "holding_cost": 648697.975,
+        "ordering_cost": 223439.1654,
+        "consumption_value": 62621069.0,
+        "demand_value": 74676912.0,
+        "closing_value": 7611344.0,
+        "policy": "baseline"
+      },
+      {
+        "MonthIndex": 47,
+        "average_stock_value": 43275335.0,
+        "holding_cost": 721255.5833333334,
+        "ordering_cost": 223439.1654,
+        "consumption_value": 71037004.0,
+        "demand_value": 77921743.0,
+        "closing_value": 7756833.0,
+        "policy": "baseline"
+      },
+      {
+        "MonthIndex": 48,
+        "average_stock_value": 34009255.0,
+        "holding_cost": 566820.9166666667,
+        "ordering_cost": 182813.8626,
+        "consumption_value": 60451408.0,
+        "demand_value": 71524722.0,
+        "closing_value": 3783551.0,
+        "policy": "baseline"
+      },
+      {
+        "MonthIndex": 37,
+        "average_stock_value": 156330247.0,
+        "holding_cost": 2605504.1166666667,
+        "ordering_cost": 264064.4682,
+        "consumption_value": 61093144.0,
+        "demand_value": 61093144.0,
+        "closing_value": 125783675.0,
+        "policy": "optimized"
+      },
+      {
+        "MonthIndex": 38,
+        "average_stock_value": 98152701.0,
+        "holding_cost": 1635878.35,
+        "ordering_cost": 142188.5598,
+        "consumption_value": 55261948.0,
+        "demand_value": 55261948.0,
+        "closing_value": 70521727.0,
+        "policy": "optimized"
+      },
+      {
+        "MonthIndex": 39,
+        "average_stock_value": 65399371.0,
+        "holding_cost": 1089989.5166666668,
+        "ordering_cost": 182813.8626,
+        "consumption_value": 73260500.0,
+        "demand_value": 73260500.0,
+        "closing_value": 28769121.0,
+        "policy": "optimized"
+      },
+      {
+        "MonthIndex": 40,
+        "average_stock_value": 59967956.5,
+        "holding_cost": 999465.9416666667,
+        "ordering_cost": 203126.514,
+        "consumption_value": 59193263.0,
+        "demand_value": 59193263.0,
+        "closing_value": 30371325.0,
+        "policy": "optimized"
+      },
+      {
+        "MonthIndex": 41,
+        "average_stock_value": 49959145.0,
+        "holding_cost": 832652.4166666667,
+        "ordering_cost": 203126.514,
+        "consumption_value": 66629742.0,
+        "demand_value": 66656730.0,
+        "closing_value": 16644274.0,
+        "policy": "optimized"
+      },
+      {
+        "MonthIndex": 42,
+        "average_stock_value": 60624686.5,
+        "holding_cost": 1010411.4416666668,
+        "ordering_cost": 162501.2112,
+        "consumption_value": 64246665.0,
+        "demand_value": 64517984.0,
+        "closing_value": 28501354.0,
+        "policy": "optimized"
+      },
+      {
+        "MonthIndex": 43,
+        "average_stock_value": 52033497.5,
+        "holding_cost": 867224.9583333334,
+        "ordering_cost": 162501.2112,
+        "consumption_value": 62989921.0,
+        "demand_value": 72453188.0,
+        "closing_value": 20538537.0,
+        "policy": "optimized"
+      },
+      {
+        "MonthIndex": 44,
+        "average_stock_value": 51388943.0,
+        "holding_cost": 856482.3833333334,
+        "ordering_cost": 182813.8626,
+        "consumption_value": 75385666.0,
+        "demand_value": 79871615.0,
+        "closing_value": 13696110.0,
+        "policy": "optimized"
+      },
+      {
+        "MonthIndex": 45,
+        "average_stock_value": 47200774.0,
+        "holding_cost": 786679.5666666668,
+        "ordering_cost": 182813.8626,
+        "consumption_value": 63839070.0,
+        "demand_value": 63839070.0,
+        "closing_value": 15281239.0,
+        "policy": "optimized"
+      },
+      {
+        "MonthIndex": 46,
+        "average_stock_value": 54334081.0,
+        "holding_cost": 905568.0166666667,
+        "ordering_cost": 203126.514,
+        "consumption_value": 72157362.0,
+        "demand_value": 74676912.0,
+        "closing_value": 18255400.0,
+        "policy": "optimized"
+      },
+      {
+        "MonthIndex": 47,
+        "average_stock_value": 72416978.5,
+        "holding_cost": 1206949.6416666668,
+        "ordering_cost": 223439.1654,
+        "consumption_value": 77831151.0,
+        "demand_value": 77921743.0,
+        "closing_value": 33501403.0,
+        "policy": "optimized"
+      },
+      {
+        "MonthIndex": 48,
+        "average_stock_value": 60514992.0,
+        "holding_cost": 1008583.2000000001,
+        "ordering_cost": 203126.514,
+        "consumption_value": 71524722.0,
+        "demand_value": 71524722.0,
+        "closing_value": 24752631.0,
+        "policy": "optimized"
+      }
+    ],
+    "items": [
+      {
+        "Medication": "M01",
+        "policy": "baseline",
+        "fill_rate": 0.9753108137564964,
+        "average_stock_value": 23135406.916666668,
+        "operating_cost": 4850520.548733335,
+        "shortage_qty": 64560,
+        "closing_stock": 0
+      },
+      {
+        "Medication": "M02",
+        "policy": "baseline",
+        "fill_rate": 0.9980038066942111,
+        "average_stock_value": 16408443.916666666,
+        "operating_cost": 3505127.948733333,
+        "shortage_qty": 43,
+        "closing_stock": 374
+      },
+      {
+        "Medication": "M03",
+        "policy": "baseline",
+        "fill_rate": 0.7099798543313187,
+        "average_stock_value": 9155064.875,
+        "operating_cost": 2054452.1404000001,
+        "shortage_qty": 3743,
+        "closing_stock": 0
+      },
+      {
+        "Medication": "M04",
+        "policy": "baseline",
+        "fill_rate": 0.9670553538353753,
+        "average_stock_value": 1645103.1666666667,
+        "operating_cost": 552459.7987333334,
+        "shortage_qty": 78529,
+        "closing_stock": 0
+      },
+      {
+        "Medication": "M05",
+        "policy": "baseline",
+        "fill_rate": 1.0,
+        "average_stock_value": 825390.5833333334,
+        "operating_cost": 388517.2820666667,
+        "shortage_qty": 0,
+        "closing_stock": 4631
+      },
+      {
+        "Medication": "M06",
+        "policy": "baseline",
+        "fill_rate": 0.5932773109243697,
+        "average_stock_value": 77405.5,
+        "operating_cost": 177982.3112,
+        "shortage_qty": 726,
+        "closing_stock": 82
+      },
+      {
+        "Medication": "M07",
+        "policy": "baseline",
+        "fill_rate": 1.0,
+        "average_stock_value": 162368.5,
+        "operating_cost": 113724.30559999999,
+        "shortage_qty": 0,
+        "closing_stock": 13
+      },
+      {
+        "Medication": "M08",
+        "policy": "baseline",
+        "fill_rate": 0.7526273241713823,
+        "average_stock_value": 23150.458333333332,
+        "operating_cost": 146818.65146666666,
+        "shortage_qty": 306,
+        "closing_stock": 0
+      },
+      {
+        "Medication": "M09",
+        "policy": "baseline",
+        "fill_rate": 0.7428884026258206,
+        "average_stock_value": 656835.375,
+        "operating_cost": 354806.2404,
+        "shortage_qty": 235,
+        "closing_stock": 24
+      },
+      {
+        "Medication": "M10",
+        "policy": "baseline",
+        "fill_rate": 0.7221052631578947,
+        "average_stock_value": 346158.5833333333,
+        "operating_cost": 150482.32226666666,
+        "shortage_qty": 792,
+        "closing_stock": 0
+      },
+      {
+        "Medication": "M11",
+        "policy": "baseline",
+        "fill_rate": 0.44363636363636366,
+        "average_stock_value": 22788.5,
+        "operating_cost": 126433.6084,
+        "shortage_qty": 612,
+        "closing_stock": 130
+      },
+      {
+        "Medication": "M12",
+        "policy": "baseline",
+        "fill_rate": 0.7707581227436823,
+        "average_stock_value": 7651.458333333333,
+        "operating_cost": 123406.20006666667,
+        "shortage_qty": 127,
+        "closing_stock": 98
+      },
+      {
+        "Medication": "M13",
+        "policy": "baseline",
+        "fill_rate": 1.0,
+        "average_stock_value": 47776.666666666664,
+        "operating_cost": 50180.636133333326,
+        "shortage_qty": 0,
+        "closing_stock": 53
+      },
+      {
+        "Medication": "M01",
+        "policy": "optimized",
+        "fill_rate": 0.9999499026735146,
+        "average_stock_value": 27919612.458333332,
+        "operating_cost": 5827674.308466666,
+        "shortage_qty": 131,
+        "closing_stock": 48668
+      },
+      {
+        "Medication": "M02",
+        "policy": "optimized",
+        "fill_rate": 1.0,
+        "average_stock_value": 21899703.041666668,
+        "operating_cost": 4623692.425133334,
+        "shortage_qty": 0,
+        "closing_stock": 963
+      },
+      {
+        "Medication": "M03",
+        "policy": "optimized",
+        "fill_rate": 0.9241438090810475,
+        "average_stock_value": 12990379.875,
+        "operating_cost": 2841827.7918000007,
+        "shortage_qty": 979,
+        "closing_stock": 375
+      },
+      {
+        "Medication": "M04",
+        "policy": "optimized",
+        "fill_rate": 1.0,
+        "average_stock_value": 2011920.625,
+        "operating_cost": 646135.9418,
+        "shortage_qty": 0,
+        "closing_stock": 28986
+      },
+      {
+        "Medication": "M05",
+        "policy": "optimized",
+        "fill_rate": 1.0,
+        "average_stock_value": 1376781.25,
+        "operating_cost": 519108.06680000003,
+        "shortage_qty": 0,
+        "closing_stock": 55133
+      },
+      {
+        "Medication": "M06",
+        "policy": "optimized",
+        "fill_rate": 0.9086834733893557,
+        "average_stock_value": 103704.0,
+        "operating_cost": 162929.35979999998,
+        "shortage_qty": 163,
+        "closing_stock": 0
+      },
+      {
+        "Medication": "M07",
+        "policy": "optimized",
+        "fill_rate": 1.0,
+        "average_stock_value": 488420.3333333333,
+        "operating_cost": 178934.67226666666,
+        "shortage_qty": 0,
+        "closing_stock": 1607
+      },
+      {
+        "Medication": "M08",
+        "policy": "optimized",
+        "fill_rate": 1.0,
+        "average_stock_value": 47327.291666666664,
+        "operating_cost": 171966.66953333333,
+        "shortage_qty": 0,
+        "closing_stock": 78
+      },
+      {
+        "Medication": "M09",
+        "policy": "optimized",
+        "fill_rate": 0.9814004376367614,
+        "average_stock_value": 1192305.625,
+        "operating_cost": 482212.94180000003,
+        "shortage_qty": 17,
+        "closing_stock": 47
+      },
+      {
+        "Medication": "M10",
+        "policy": "optimized",
+        "fill_rate": 0.992280701754386,
+        "average_stock_value": 662517.9166666666,
+        "operating_cost": 295004.7945333333,
+        "shortage_qty": 22,
+        "closing_stock": 409
+      },
+      {
+        "Medication": "M11",
+        "policy": "optimized",
+        "fill_rate": 1.0,
+        "average_stock_value": 152825.75,
+        "operating_cost": 152441.0584,
+        "shortage_qty": 0,
+        "closing_stock": 230
+      },
+      {
+        "Medication": "M12",
+        "policy": "optimized",
+        "fill_rate": 1.0,
+        "average_stock_value": 19419.583333333332,
+        "operating_cost": 146072.47646666665,
+        "shortage_qty": 0,
+        "closing_stock": 150
+      },
+      {
+        "Medication": "M13",
+        "policy": "optimized",
+        "fill_rate": 1.0,
+        "average_stock_value": 162030.0,
+        "operating_cost": 73031.30279999999,
+        "shortage_qty": 0,
+        "closing_stock": 403
+      }
+    ]
+  },
+  "risks": [
+    {
+      "Medication": "M13",
+      "abc": "C",
+      "annual_demand_value": 92400.0,
+      "abc_share": 0.0001134926080078075,
+      "stock": 170,
+      "unit_price": 440.0,
+      "stock_value": 74800.0,
+      "mean_recent6": 15.0,
+      "coverage_months": 11.333333333333334,
+      "stagnant": false,
+      "excess": true,
+      "high_risk": true,
+      "forecast": 30.0,
+      "safety_stock": 191,
+      "safety_samples": 24,
+      "reorder_point": 221,
+      "reference_order_qty": 81,
+      "method": "mean3",
+      "method_name": "近3月均值",
+      "conflicting_signals": true,
+      "hold_for_review": true,
+      "advisory_order_qty": null,
+      "state": "高积压风险",
+      "reasons": [
+        "库存超过近6月需求估计的6个月覆盖量",
+        "期初库存低于模型安全库存",
+        "近期覆盖量与历史波动缓冲发出相反信号"
+      ],
+      "actions": [
+        "暂缓按模型直接下单；先核实偶发大额需求、在途与库存可用性",
+        "由采购结合销售/用药需求复核补货或调剂退换，不同时执行矛盾建议"
+      ],
+      "potential_excess_qty": 80,
+      "history": [
+        {
+          "month": 1,
+          "demand": 0
+        },
+        {
+          "month": 2,
+          "demand": 0
+        },
+        {
+          "month": 3,
+          "demand": 0
+        },
+        {
+          "month": 4,
+          "demand": 0
+        },
+        {
+          "month": 5,
+          "demand": 0
+        },
+        {
+          "month": 6,
+          "demand": 0
+        },
+        {
+          "month": 7,
+          "demand": 0
+        },
+        {
+          "month": 8,
+          "demand": 0
+        },
+        {
+          "month": 9,
+          "demand": 300
+        },
+        {
+          "month": 10,
+          "demand": 0
+        },
+        {
+          "month": 11,
+          "demand": 100
+        },
+        {
+          "month": 12,
+          "demand": 0
+        },
+        {
+          "month": 13,
+          "demand": 0
+        },
+        {
+          "month": 14,
+          "demand": 0
+        },
+        {
+          "month": 15,
+          "demand": 0
+        },
+        {
+          "month": 16,
+          "demand": 0
+        },
+        {
+          "month": 17,
+          "demand": 0
+        },
+        {
+          "month": 18,
+          "demand": 200
+        },
+        {
+          "month": 19,
+          "demand": 200
+        },
+        {
+          "month": 20,
+          "demand": 0
+        },
+        {
+          "month": 21,
+          "demand": 200
+        },
+        {
+          "month": 22,
+          "demand": 200
+        },
+        {
+          "month": 23,
+          "demand": 0
+        },
+        {
+          "month": 24,
+          "demand": 300
+        },
+        {
+          "month": 25,
+          "demand": 170
+        },
+        {
+          "month": 26,
+          "demand": 30
+        },
+        {
+          "month": 27,
+          "demand": 240
+        },
+        {
+          "month": 28,
+          "demand": 60
+        },
+        {
+          "month": 29,
+          "demand": 20
+        },
+        {
+          "month": 30,
+          "demand": 0
+        },
+        {
+          "month": 31,
+          "demand": 300
+        },
+        {
+          "month": 32,
+          "demand": 0
+        },
+        {
+          "month": 33,
+          "demand": 0
+        },
+        {
+          "month": 34,
+          "demand": 0
+        },
+        {
+          "month": 35,
+          "demand": 0
+        },
+        {
+          "month": 36,
+          "demand": 0
+        },
+        {
+          "month": 37,
+          "demand": 0
+        },
+        {
+          "month": 38,
+          "demand": 0
+        },
+        {
+          "month": 39,
+          "demand": 120
+        },
+        {
+          "month": 40,
+          "demand": 0
+        },
+        {
+          "month": 41,
+          "demand": 0
+        },
+        {
+          "month": 42,
+          "demand": 0
+        },
+        {
+          "month": 43,
+          "demand": 0
+        },
+        {
+          "month": 44,
+          "demand": 0
+        },
+        {
+          "month": 45,
+          "demand": 90
+        },
+        {
+          "month": 46,
+          "demand": 0
+        },
+        {
+          "month": 47,
+          "demand": 0
+        }
+      ]
+    },
+    {
+      "Medication": "M03",
+      "abc": "A",
+      "annual_demand_value": 206670288.0,
+      "abc_share": 0.25384794353728013,
+      "stock": 399,
+      "unit_price": 16797.0,
+      "stock_value": 6702003.0,
+      "mean_recent6": 1261.8333333333333,
+      "coverage_months": 0.31620657773081495,
+      "stagnant": false,
+      "excess": false,
+      "high_risk": false,
+      "forecast": 1347.3333333333333,
+      "safety_stock": 585,
+      "safety_samples": 24,
+      "reorder_point": 1933,
+      "reference_order_qty": 2881,
+      "method": "mean3",
+      "method_name": "近3月均值",
+      "conflicting_signals": false,
+      "hold_for_review": false,
+      "advisory_order_qty": 2881,
+      "state": "安全库存预警",
+      "reasons": [
+        "期初库存低于模型安全库存"
+      ],
+      "actions": [
+        "核实在途与可用状态，再确认采购交期和补货数量"
+      ],
+      "potential_excess_qty": 0,
+      "history": [
+        {
+          "month": 1,
+          "demand": 379
+        },
+        {
+          "month": 2,
+          "demand": 346
+        },
+        {
+          "month": 3,
+          "demand": 458
+        },
+        {
+          "month": 4,
+          "demand": 680
+        },
+        {
+          "month": 5,
+          "demand": 417
+        },
+        {
+          "month": 6,
+          "demand": 539
+        },
+        {
+          "month": 7,
+          "demand": 358
+        },
+        {
+          "month": 8,
+          "demand": 312
+        },
+        {
+          "month": 9,
+          "demand": 493
+        },
+        {
+          "month": 10,
+          "demand": 276
+        },
+        {
+          "month": 11,
+          "demand": 403
+        },
+        {
+          "month": 12,
+          "demand": 445
+        },
+        {
+          "month": 13,
+          "demand": 324
+        },
+        {
+          "month": 14,
+          "demand": 336
+        },
+        {
+          "month": 15,
+          "demand": 597
+        },
+        {
+          "month": 16,
+          "demand": 350
+        },
+        {
+          "month": 17,
+          "demand": 359
+        },
+        {
+          "month": 18,
+          "demand": 518
+        },
+        {
+          "month": 19,
+          "demand": 408
+        },
+        {
+          "month": 20,
+          "demand": 492
+        },
+        {
+          "month": 21,
+          "demand": 504
+        },
+        {
+          "month": 22,
+          "demand": 342
+        },
+        {
+          "month": 23,
+          "demand": 629
+        },
+        {
+          "month": 24,
+          "demand": 631
+        },
+        {
+          "month": 25,
+          "demand": 504
+        },
+        {
+          "month": 26,
+          "demand": 555
+        },
+        {
+          "month": 27,
+          "demand": 702
+        },
+        {
+          "month": 28,
+          "demand": 453
+        },
+        {
+          "month": 29,
+          "demand": 714
+        },
+        {
+          "month": 30,
+          "demand": 676
+        },
+        {
+          "month": 31,
+          "demand": 604
+        },
+        {
+          "month": 32,
+          "demand": 729
+        },
+        {
+          "month": 33,
+          "demand": 754
+        },
+        {
+          "month": 34,
+          "demand": 732
+        },
+        {
+          "month": 35,
+          "demand": 743
+        },
+        {
+          "month": 36,
+          "demand": 788
+        },
+        {
+          "month": 37,
+          "demand": 806
+        },
+        {
+          "month": 38,
+          "demand": 717
+        },
+        {
+          "month": 39,
+          "demand": 872
+        },
+        {
+          "month": 40,
+          "demand": 660
+        },
+        {
+          "month": 41,
+          "demand": 890
+        },
+        {
+          "month": 42,
+          "demand": 1008
+        },
+        {
+          "month": 43,
+          "demand": 1192
+        },
+        {
+          "month": 44,
+          "demand": 1329
+        },
+        {
+          "month": 45,
+          "demand": 1067
+        },
+        {
+          "month": 46,
+          "demand": 1515
+        },
+        {
+          "month": 47,
+          "demand": 1460
+        }
+      ]
+    },
+    {
+      "Medication": "M02",
+      "abc": "A",
+      "annual_demand_value": 191833472.0,
+      "abc_share": 0.23562425368476966,
+      "stock": 552,
+      "unit_price": 8663.0,
+      "stock_value": 4781976.0,
+      "mean_recent6": 1793.1666666666667,
+      "coverage_months": 0.30783530067850173,
+      "stagnant": false,
+      "excess": false,
+      "high_risk": false,
+      "forecast": 1845.3333333333333,
+      "safety_stock": 478,
+      "safety_samples": 24,
+      "reorder_point": 2324,
+      "reference_order_qty": 3617,
+      "method": "mean12",
+      "method_name": "近12月均值",
+      "conflicting_signals": false,
+      "hold_for_review": false,
+      "advisory_order_qty": 3617,
+      "state": "补货关注",
+      "reasons": [
+        "库存低于覆盖交期需求与缓冲的补货阈值"
+      ],
+      "actions": [
+        "核实在途与可用状态，再确认采购交期和补货数量"
+      ],
+      "potential_excess_qty": 0,
+      "history": [
+        {
+          "month": 1,
+          "demand": 1692
+        },
+        {
+          "month": 2,
+          "demand": 1522
+        },
+        {
+          "month": 3,
+          "demand": 1954
+        },
+        {
+          "month": 4,
+          "demand": 3004
+        },
+        {
+          "month": 5,
+          "demand": 1577
+        },
+        {
+          "month": 6,
+          "demand": 2280
+        },
+        {
+          "month": 7,
+          "demand": 1854
+        },
+        {
+          "month": 8,
+          "demand": 1480
+        },
+        {
+          "month": 9,
+          "demand": 1831
+        },
+        {
+          "month": 10,
+          "demand": 2091
+        },
+        {
+          "month": 11,
+          "demand": 1500
+        },
+        {
+          "month": 12,
+          "demand": 1911
+        },
+        {
+          "month": 13,
+          "demand": 1994
+        },
+        {
+          "month": 14,
+          "demand": 1382
+        },
+        {
+          "month": 15,
+          "demand": 2455
+        },
+        {
+          "month": 16,
+          "demand": 2122
+        },
+        {
+          "month": 17,
+          "demand": 1669
+        },
+        {
+          "month": 18,
+          "demand": 2183
+        },
+        {
+          "month": 19,
+          "demand": 2277
+        },
+        {
+          "month": 20,
+          "demand": 2038
+        },
+        {
+          "month": 21,
+          "demand": 2100
+        },
+        {
+          "month": 22,
+          "demand": 1878
+        },
+        {
+          "month": 23,
+          "demand": 2443
+        },
+        {
+          "month": 24,
+          "demand": 2203
+        },
+        {
+          "month": 25,
+          "demand": 2015
+        },
+        {
+          "month": 26,
+          "demand": 1860
+        },
+        {
+          "month": 27,
+          "demand": 2431
+        },
+        {
+          "month": 28,
+          "demand": 1750
+        },
+        {
+          "month": 29,
+          "demand": 2125
+        },
+        {
+          "month": 30,
+          "demand": 2181
+        },
+        {
+          "month": 31,
+          "demand": 2057
+        },
+        {
+          "month": 32,
+          "demand": 2147
+        },
+        {
+          "month": 33,
+          "demand": 2063
+        },
+        {
+          "month": 34,
+          "demand": 1964
+        },
+        {
+          "month": 35,
+          "demand": 2177
+        },
+        {
+          "month": 36,
+          "demand": 1984
+        },
+        {
+          "month": 37,
+          "demand": 1753
+        },
+        {
+          "month": 38,
+          "demand": 1557
+        },
+        {
+          "month": 39,
+          "demand": 2189
+        },
+        {
+          "month": 40,
+          "demand": 1869
+        },
+        {
+          "month": 41,
+          "demand": 2033
+        },
+        {
+          "month": 42,
+          "demand": 1189
+        },
+        {
+          "month": 43,
+          "demand": 2134
+        },
+        {
+          "month": 44,
+          "demand": 2229
+        },
+        {
+          "month": 45,
+          "demand": 1354
+        },
+        {
+          "month": 46,
+          "demand": 1782
+        },
+        {
+          "month": 47,
+          "demand": 2071
+        }
+      ]
+    },
+    {
+      "Medication": "M10",
+      "abc": "C",
+      "annual_demand_value": 5779930.0,
+      "abc_share": 0.007099343396131675,
+      "stock": 330,
+      "unit_price": 2249.0,
+      "stock_value": 742170.0,
+      "mean_recent6": 218.33333333333334,
+      "coverage_months": 1.5114503816793892,
+      "stagnant": false,
+      "excess": false,
+      "high_risk": false,
+      "forecast": 218.33333333333334,
+      "safety_stock": 482,
+      "safety_samples": 24,
+      "reorder_point": 701,
+      "reference_order_qty": 589,
+      "method": "mean6",
+      "method_name": "近6月均值",
+      "conflicting_signals": false,
+      "hold_for_review": false,
+      "advisory_order_qty": 589,
+      "state": "安全库存预警",
+      "reasons": [
+        "期初库存低于模型安全库存"
+      ],
+      "actions": [
+        "核实在途与可用状态，再确认采购交期和补货数量"
+      ],
+      "potential_excess_qty": 0,
+      "history": [
+        {
+          "month": 1,
+          "demand": 180
+        },
+        {
+          "month": 2,
+          "demand": 120
+        },
+        {
+          "month": 3,
+          "demand": 150
+        },
+        {
+          "month": 4,
+          "demand": 180
+        },
+        {
+          "month": 5,
+          "demand": 120
+        },
+        {
+          "month": 6,
+          "demand": 360
+        },
+        {
+          "month": 7,
+          "demand": 180
+        },
+        {
+          "month": 8,
+          "demand": 0
+        },
+        {
+          "month": 9,
+          "demand": 120
+        },
+        {
+          "month": 10,
+          "demand": 420
+        },
+        {
+          "month": 11,
+          "demand": 240
+        },
+        {
+          "month": 12,
+          "demand": 0
+        },
+        {
+          "month": 13,
+          "demand": 540
+        },
+        {
+          "month": 14,
+          "demand": 0
+        },
+        {
+          "month": 15,
+          "demand": 90
+        },
+        {
+          "month": 16,
+          "demand": 220
+        },
+        {
+          "month": 17,
+          "demand": 540
+        },
+        {
+          "month": 18,
+          "demand": 0
+        },
+        {
+          "month": 19,
+          "demand": 0
+        },
+        {
+          "month": 20,
+          "demand": 180
+        },
+        {
+          "month": 21,
+          "demand": 0
+        },
+        {
+          "month": 22,
+          "demand": 0
+        },
+        {
+          "month": 23,
+          "demand": 540
+        },
+        {
+          "month": 24,
+          "demand": 0
+        },
+        {
+          "month": 25,
+          "demand": 0
+        },
+        {
+          "month": 26,
+          "demand": 0
+        },
+        {
+          "month": 27,
+          "demand": 360
+        },
+        {
+          "month": 28,
+          "demand": 120
+        },
+        {
+          "month": 29,
+          "demand": 240
+        },
+        {
+          "month": 30,
+          "demand": 360
+        },
+        {
+          "month": 31,
+          "demand": 0
+        },
+        {
+          "month": 32,
+          "demand": 0
+        },
+        {
+          "month": 33,
+          "demand": 180
+        },
+        {
+          "month": 34,
+          "demand": 0
+        },
+        {
+          "month": 35,
+          "demand": 360
+        },
+        {
+          "month": 36,
+          "demand": 120
+        },
+        {
+          "month": 37,
+          "demand": 0
+        },
+        {
+          "month": 38,
+          "demand": 360
+        },
+        {
+          "month": 39,
+          "demand": 0
+        },
+        {
+          "month": 40,
+          "demand": 100
+        },
+        {
+          "month": 41,
+          "demand": 680
+        },
+        {
+          "month": 42,
+          "demand": 10
+        },
+        {
+          "month": 43,
+          "demand": 0
+        },
+        {
+          "month": 44,
+          "demand": 720
+        },
+        {
+          "month": 45,
+          "demand": 180
+        },
+        {
+          "month": 46,
+          "demand": 0
+        },
+        {
+          "month": 47,
+          "demand": 400
+        }
+      ]
+    },
+    {
+      "Medication": "M09",
+      "abc": "C",
+      "annual_demand_value": 13685595.0,
+      "abc_share": 0.01680967390355639,
+      "stock": 27,
+      "unit_price": 14637.0,
+      "stock_value": 395199.0,
+      "mean_recent6": 88.83333333333333,
+      "coverage_months": 0.30393996247654786,
+      "stagnant": false,
+      "excess": false,
+      "high_risk": false,
+      "forecast": 77.91666666666667,
+      "safety_stock": 72,
+      "safety_samples": 24,
+      "reorder_point": 150,
+      "reference_order_qty": 201,
+      "method": "mean12",
+      "method_name": "近12月均值",
+      "conflicting_signals": false,
+      "hold_for_review": false,
+      "advisory_order_qty": 201,
+      "state": "安全库存预警",
+      "reasons": [
+        "期初库存低于模型安全库存"
+      ],
+      "actions": [
+        "核实在途与可用状态，再确认采购交期和补货数量"
+      ],
+      "potential_excess_qty": 0,
+      "history": [
+        {
+          "month": 1,
+          "demand": 45
+        },
+        {
+          "month": 2,
+          "demand": 38
+        },
+        {
+          "month": 3,
+          "demand": 18
+        },
+        {
+          "month": 4,
+          "demand": 4
+        },
+        {
+          "month": 5,
+          "demand": 6
+        },
+        {
+          "month": 6,
+          "demand": 2
+        },
+        {
+          "month": 7,
+          "demand": 0
+        },
+        {
+          "month": 8,
+          "demand": 1
+        },
+        {
+          "month": 9,
+          "demand": 4
+        },
+        {
+          "month": 10,
+          "demand": 1
+        },
+        {
+          "month": 11,
+          "demand": 17
+        },
+        {
+          "month": 12,
+          "demand": 16
+        },
+        {
+          "month": 13,
+          "demand": 45
+        },
+        {
+          "month": 14,
+          "demand": 14
+        },
+        {
+          "month": 15,
+          "demand": 37
+        },
+        {
+          "month": 16,
+          "demand": 22
+        },
+        {
+          "month": 17,
+          "demand": 50
+        },
+        {
+          "month": 18,
+          "demand": 42
+        },
+        {
+          "month": 19,
+          "demand": 45
+        },
+        {
+          "month": 20,
+          "demand": 66
+        },
+        {
+          "month": 21,
+          "demand": 25
+        },
+        {
+          "month": 22,
+          "demand": 54
+        },
+        {
+          "month": 23,
+          "demand": 65
+        },
+        {
+          "month": 24,
+          "demand": 54
+        },
+        {
+          "month": 25,
+          "demand": 45
+        },
+        {
+          "month": 26,
+          "demand": 28
+        },
+        {
+          "month": 27,
+          "demand": 60
+        },
+        {
+          "month": 28,
+          "demand": 44
+        },
+        {
+          "month": 29,
+          "demand": 49
+        },
+        {
+          "month": 30,
+          "demand": 31
+        },
+        {
+          "month": 31,
+          "demand": 62
+        },
+        {
+          "month": 32,
+          "demand": 32
+        },
+        {
+          "month": 33,
+          "demand": 67
+        },
+        {
+          "month": 34,
+          "demand": 38
+        },
+        {
+          "month": 35,
+          "demand": 72
+        },
+        {
+          "month": 36,
+          "demand": 69
+        },
+        {
+          "month": 37,
+          "demand": 39
+        },
+        {
+          "month": 38,
+          "demand": 56
+        },
+        {
+          "month": 39,
+          "demand": 69
+        },
+        {
+          "month": 40,
+          "demand": 83
+        },
+        {
+          "month": 41,
+          "demand": 86
+        },
+        {
+          "month": 42,
+          "demand": 99
+        },
+        {
+          "month": 43,
+          "demand": 82
+        },
+        {
+          "month": 44,
+          "demand": 69
+        },
+        {
+          "month": 45,
+          "demand": 71
+        },
+        {
+          "month": 46,
+          "demand": 111
+        },
+        {
+          "month": 47,
+          "demand": 101
+        }
+      ]
+    },
+    {
+      "Medication": "M05",
+      "abc": "C",
+      "annual_demand_value": 10343463.0,
+      "abc_share": 0.01270461679331451,
+      "stock": 27841,
+      "unit_price": 13.0,
+      "stock_value": 361933.0,
+      "mean_recent6": 65922.16666666667,
+      "coverage_months": 0.4223313857503672,
+      "stagnant": false,
+      "excess": false,
+      "high_risk": false,
+      "forecast": 71185.0,
+      "safety_stock": 27314,
+      "safety_samples": 24,
+      "reorder_point": 98499,
+      "reference_order_qty": 141843,
+      "method": "seasonal",
+      "method_name": "上一年同月",
+      "conflicting_signals": false,
+      "hold_for_review": false,
+      "advisory_order_qty": 141843,
+      "state": "补货关注",
+      "reasons": [
+        "库存低于覆盖交期需求与缓冲的补货阈值"
+      ],
+      "actions": [
+        "核实在途与可用状态，再确认采购交期和补货数量"
+      ],
+      "potential_excess_qty": 0,
+      "history": [
+        {
+          "month": 1,
+          "demand": 64233
+        },
+        {
+          "month": 2,
+          "demand": 64127
+        },
+        {
+          "month": 3,
+          "demand": 78595
+        },
+        {
+          "month": 4,
+          "demand": 85330
+        },
+        {
+          "month": 5,
+          "demand": 69533
+        },
+        {
+          "month": 6,
+          "demand": 74748
+        },
+        {
+          "month": 7,
+          "demand": 63655
+        },
+        {
+          "month": 8,
+          "demand": 58124
+        },
+        {
+          "month": 9,
+          "demand": 70956
+        },
+        {
+          "month": 10,
+          "demand": 74809
+        },
+        {
+          "month": 11,
+          "demand": 71326
+        },
+        {
+          "month": 12,
+          "demand": 69541
+        },
+        {
+          "month": 13,
+          "demand": 82384
+        },
+        {
+          "month": 14,
+          "demand": 56215
+        },
+        {
+          "month": 15,
+          "demand": 88756
+        },
+        {
+          "month": 16,
+          "demand": 82088
+        },
+        {
+          "month": 17,
+          "demand": 62883
+        },
+        {
+          "month": 18,
+          "demand": 77707
+        },
+        {
+          "month": 19,
+          "demand": 77823
+        },
+        {
+          "month": 20,
+          "demand": 77225
+        },
+        {
+          "month": 21,
+          "demand": 73649
+        },
+        {
+          "month": 22,
+          "demand": 72536
+        },
+        {
+          "month": 23,
+          "demand": 75323
+        },
+        {
+          "month": 24,
+          "demand": 82564
+        },
+        {
+          "month": 25,
+          "demand": 72746
+        },
+        {
+          "month": 26,
+          "demand": 53634
+        },
+        {
+          "month": 27,
+          "demand": 88689
+        },
+        {
+          "month": 28,
+          "demand": 71991
+        },
+        {
+          "month": 29,
+          "demand": 66266
+        },
+        {
+          "month": 30,
+          "demand": 75849
+        },
+        {
+          "month": 31,
+          "demand": 77089
+        },
+        {
+          "month": 32,
+          "demand": 73151
+        },
+        {
+          "month": 33,
+          "demand": 74500
+        },
+        {
+          "month": 34,
+          "demand": 68888
+        },
+        {
+          "month": 35,
+          "demand": 72005
+        },
+        {
+          "month": 36,
+          "demand": 71185
+        },
+        {
+          "month": 37,
+          "demand": 70285
+        },
+        {
+          "month": 38,
+          "demand": 57680
+        },
+        {
+          "month": 39,
+          "demand": 78836
+        },
+        {
+          "month": 40,
+          "demand": 62253
+        },
+        {
+          "month": 41,
+          "demand": 59879
+        },
+        {
+          "month": 42,
+          "demand": 69343
+        },
+        {
+          "month": 43,
+          "demand": 64815
+        },
+        {
+          "month": 44,
+          "demand": 67482
+        },
+        {
+          "month": 45,
+          "demand": 59993
+        },
+        {
+          "month": 46,
+          "demand": 68303
+        },
+        {
+          "month": 47,
+          "demand": 65597
+        }
+      ]
+    },
+    {
+      "Medication": "M01",
+      "abc": "A",
+      "annual_demand_value": 357218321.0,
+      "abc_share": 0.43876232552446054,
+      "stock": 2487,
+      "unit_price": 137.0,
+      "stock_value": 340719.0,
+      "mean_recent6": 221453.5,
+      "coverage_months": 0.011230348583336908,
+      "stagnant": false,
+      "excess": false,
+      "high_risk": false,
+      "forecast": 221453.5,
+      "safety_stock": 32698,
+      "safety_samples": 24,
+      "reorder_point": 254152,
+      "reference_order_qty": 473118,
+      "method": "mean6",
+      "method_name": "近6月均值",
+      "conflicting_signals": false,
+      "hold_for_review": false,
+      "advisory_order_qty": 473118,
+      "state": "安全库存预警",
+      "reasons": [
+        "期初库存低于模型安全库存"
+      ],
+      "actions": [
+        "核实在途与可用状态，再确认采购交期和补货数量"
+      ],
+      "potential_excess_qty": 0,
+      "history": [
+        {
+          "month": 1,
+          "demand": 123391
+        },
+        {
+          "month": 2,
+          "demand": 199570
+        },
+        {
+          "month": 3,
+          "demand": 228202
+        },
+        {
+          "month": 4,
+          "demand": 140608
+        },
+        {
+          "month": 5,
+          "demand": 242222
+        },
+        {
+          "month": 6,
+          "demand": 204944
+        },
+        {
+          "month": 7,
+          "demand": 176240
+        },
+        {
+          "month": 8,
+          "demand": 173490
+        },
+        {
+          "month": 9,
+          "demand": 189320
+        },
+        {
+          "month": 10,
+          "demand": 200750
+        },
+        {
+          "month": 11,
+          "demand": 174284
+        },
+        {
+          "month": 12,
+          "demand": 202460
+        },
+        {
+          "month": 13,
+          "demand": 177880
+        },
+        {
+          "month": 14,
+          "demand": 157260
+        },
+        {
+          "month": 15,
+          "demand": 244170
+        },
+        {
+          "month": 16,
+          "demand": 216040
+        },
+        {
+          "month": 17,
+          "demand": 179990
+        },
+        {
+          "month": 18,
+          "demand": 215490
+        },
+        {
+          "month": 19,
+          "demand": 211200
+        },
+        {
+          "month": 20,
+          "demand": 210140
+        },
+        {
+          "month": 21,
+          "demand": 200560
+        },
+        {
+          "month": 22,
+          "demand": 200480
+        },
+        {
+          "month": 23,
+          "demand": 200150
+        },
+        {
+          "month": 24,
+          "demand": 224000
+        },
+        {
+          "month": 25,
+          "demand": 199860
+        },
+        {
+          "month": 26,
+          "demand": 167240
+        },
+        {
+          "month": 27,
+          "demand": 241320
+        },
+        {
+          "month": 28,
+          "demand": 203080
+        },
+        {
+          "month": 29,
+          "demand": 202290
+        },
+        {
+          "month": 30,
+          "demand": 206050
+        },
+        {
+          "month": 31,
+          "demand": 212420
+        },
+        {
+          "month": 32,
+          "demand": 224640
+        },
+        {
+          "month": 33,
+          "demand": 219160
+        },
+        {
+          "month": 34,
+          "demand": 211320
+        },
+        {
+          "month": 35,
+          "demand": 225660
+        },
+        {
+          "month": 36,
+          "demand": 222430
+        },
+        {
+          "month": 37,
+          "demand": 208930
+        },
+        {
+          "month": 38,
+          "demand": 185140
+        },
+        {
+          "month": 39,
+          "demand": 253430
+        },
+        {
+          "month": 40,
+          "demand": 201770
+        },
+        {
+          "month": 41,
+          "demand": 207012
+        },
+        {
+          "month": 42,
+          "demand": 236120
+        },
+        {
+          "month": 43,
+          "demand": 215935
+        },
+        {
+          "month": 44,
+          "demand": 235118
+        },
+        {
+          "month": 45,
+          "demand": 216370
+        },
+        {
+          "month": 46,
+          "demand": 207105
+        },
+        {
+          "month": 47,
+          "demand": 218073
+        }
+      ]
+    },
+    {
+      "Medication": "M04",
+      "abc": "B",
+      "annual_demand_value": 26235000.0,
+      "abc_share": 0.03222379405935963,
+      "stock": 29085,
+      "unit_price": 11.0,
+      "stock_value": 319935.0,
+      "mean_recent6": 203246.66666666666,
+      "coverage_months": 0.14310197789221635,
+      "stagnant": false,
+      "excess": false,
+      "high_risk": false,
+      "forecast": 202583.33333333334,
+      "safety_stock": 36422,
+      "safety_samples": 24,
+      "reorder_point": 239006,
+      "reference_order_qty": 412504,
+      "method": "mean3",
+      "method_name": "近3月均值",
+      "conflicting_signals": false,
+      "hold_for_review": false,
+      "advisory_order_qty": 412504,
+      "state": "安全库存预警",
+      "reasons": [
+        "期初库存低于模型安全库存"
+      ],
+      "actions": [
+        "核实在途与可用状态，再确认采购交期和补货数量"
+      ],
+      "potential_excess_qty": 0,
+      "history": [
+        {
+          "month": 1,
+          "demand": 169884
+        },
+        {
+          "month": 2,
+          "demand": 168264
+        },
+        {
+          "month": 3,
+          "demand": 198458
+        },
+        {
+          "month": 4,
+          "demand": 209255
+        },
+        {
+          "month": 5,
+          "demand": 165898
+        },
+        {
+          "month": 6,
+          "demand": 189498
+        },
+        {
+          "month": 7,
+          "demand": 154390
+        },
+        {
+          "month": 8,
+          "demand": 149669
+        },
+        {
+          "month": 9,
+          "demand": 164925
+        },
+        {
+          "month": 10,
+          "demand": 175920
+        },
+        {
+          "month": 11,
+          "demand": 170295
+        },
+        {
+          "month": 12,
+          "demand": 167090
+        },
+        {
+          "month": 13,
+          "demand": 190360
+        },
+        {
+          "month": 14,
+          "demand": 130720
+        },
+        {
+          "month": 15,
+          "demand": 205823
+        },
+        {
+          "month": 16,
+          "demand": 195619
+        },
+        {
+          "month": 17,
+          "demand": 157212
+        },
+        {
+          "month": 18,
+          "demand": 183100
+        },
+        {
+          "month": 19,
+          "demand": 185160
+        },
+        {
+          "month": 20,
+          "demand": 176500
+        },
+        {
+          "month": 21,
+          "demand": 181030
+        },
+        {
+          "month": 22,
+          "demand": 171850
+        },
+        {
+          "month": 23,
+          "demand": 172125
+        },
+        {
+          "month": 24,
+          "demand": 189295
+        },
+        {
+          "month": 25,
+          "demand": 198390
+        },
+        {
+          "month": 26,
+          "demand": 154950
+        },
+        {
+          "month": 27,
+          "demand": 217135
+        },
+        {
+          "month": 28,
+          "demand": 173900
+        },
+        {
+          "month": 29,
+          "demand": 179805
+        },
+        {
+          "month": 30,
+          "demand": 181240
+        },
+        {
+          "month": 31,
+          "demand": 177860
+        },
+        {
+          "month": 32,
+          "demand": 200750
+        },
+        {
+          "month": 33,
+          "demand": 197580
+        },
+        {
+          "month": 34,
+          "demand": 194190
+        },
+        {
+          "month": 35,
+          "demand": 212685
+        },
+        {
+          "month": 36,
+          "demand": 197300
+        },
+        {
+          "month": 37,
+          "demand": 202585
+        },
+        {
+          "month": 38,
+          "demand": 171440
+        },
+        {
+          "month": 39,
+          "demand": 232445
+        },
+        {
+          "month": 40,
+          "demand": 177060
+        },
+        {
+          "month": 41,
+          "demand": 184690
+        },
+        {
+          "month": 42,
+          "demand": 212650
+        },
+        {
+          "month": 43,
+          "demand": 192160
+        },
+        {
+          "month": 44,
+          "demand": 206920
+        },
+        {
+          "month": 45,
+          "demand": 194760
+        },
+        {
+          "month": 46,
+          "demand": 216155
+        },
+        {
+          "month": 47,
+          "demand": 196835
+        }
+      ]
+    },
+    {
+      "Medication": "M07",
+      "abc": "C",
+      "annual_demand_value": 653660.0,
+      "abc_share": 0.0008028742224067473,
+      "stock": 660,
+      "unit_price": 322.0,
+      "stock_value": 212520.0,
+      "mean_recent6": 190.0,
+      "coverage_months": 3.473684210526316,
+      "stagnant": false,
+      "excess": false,
+      "high_risk": false,
+      "forecast": 360.0,
+      "safety_stock": 360,
+      "safety_samples": 24,
+      "reorder_point": 720,
+      "reference_order_qty": 420,
+      "method": "seasonal",
+      "method_name": "上一年同月",
+      "conflicting_signals": false,
+      "hold_for_review": false,
+      "advisory_order_qty": 420,
+      "state": "补货关注",
+      "reasons": [
+        "库存低于覆盖交期需求与缓冲的补货阈值"
+      ],
+      "actions": [
+        "核实在途与可用状态，再确认采购交期和补货数量"
+      ],
+      "potential_excess_qty": 0,
+      "history": [
+        {
+          "month": 1,
+          "demand": 420
+        },
+        {
+          "month": 2,
+          "demand": 420
+        },
+        {
+          "month": 3,
+          "demand": 300
+        },
+        {
+          "month": 4,
+          "demand": 180
+        },
+        {
+          "month": 5,
+          "demand": 0
+        },
+        {
+          "month": 6,
+          "demand": 360
+        },
+        {
+          "month": 7,
+          "demand": 180
+        },
+        {
+          "month": 8,
+          "demand": 620
+        },
+        {
+          "month": 9,
+          "demand": 0
+        },
+        {
+          "month": 10,
+          "demand": 230
+        },
+        {
+          "month": 11,
+          "demand": 370
+        },
+        {
+          "month": 12,
+          "demand": 180
+        },
+        {
+          "month": 13,
+          "demand": 350
+        },
+        {
+          "month": 14,
+          "demand": 360
+        },
+        {
+          "month": 15,
+          "demand": 180
+        },
+        {
+          "month": 16,
+          "demand": 480
+        },
+        {
+          "month": 17,
+          "demand": 360
+        },
+        {
+          "month": 18,
+          "demand": 180
+        },
+        {
+          "month": 19,
+          "demand": 180
+        },
+        {
+          "month": 20,
+          "demand": 360
+        },
+        {
+          "month": 21,
+          "demand": 180
+        },
+        {
+          "month": 22,
+          "demand": 180
+        },
+        {
+          "month": 23,
+          "demand": 540
+        },
+        {
+          "month": 24,
+          "demand": 240
+        },
+        {
+          "month": 25,
+          "demand": 540
+        },
+        {
+          "month": 26,
+          "demand": 180
+        },
+        {
+          "month": 27,
+          "demand": 400
+        },
+        {
+          "month": 28,
+          "demand": 180
+        },
+        {
+          "month": 29,
+          "demand": 180
+        },
+        {
+          "month": 30,
+          "demand": 180
+        },
+        {
+          "month": 31,
+          "demand": 180
+        },
+        {
+          "month": 32,
+          "demand": 450
+        },
+        {
+          "month": 33,
+          "demand": 540
+        },
+        {
+          "month": 34,
+          "demand": 180
+        },
+        {
+          "month": 35,
+          "demand": 540
+        },
+        {
+          "month": 36,
+          "demand": 360
+        },
+        {
+          "month": 37,
+          "demand": 0
+        },
+        {
+          "month": 38,
+          "demand": 10
+        },
+        {
+          "month": 39,
+          "demand": 520
+        },
+        {
+          "month": 40,
+          "demand": 0
+        },
+        {
+          "month": 41,
+          "demand": 0
+        },
+        {
+          "month": 42,
+          "demand": 360
+        },
+        {
+          "month": 43,
+          "demand": 0
+        },
+        {
+          "month": 44,
+          "demand": 420
+        },
+        {
+          "month": 45,
+          "demand": 0
+        },
+        {
+          "month": 46,
+          "demand": 360
+        },
+        {
+          "month": 47,
+          "demand": 0
+        }
+      ]
+    },
+    {
+      "Medication": "M06",
+      "abc": "C",
+      "annual_demand_value": 1063860.0,
+      "abc_share": 0.00130671261856262,
+      "stock": 150,
+      "unit_price": 596.0,
+      "stock_value": 89400.0,
+      "mean_recent6": 222.5,
+      "coverage_months": 0.6741573033707865,
+      "stagnant": false,
+      "excess": false,
+      "high_risk": false,
+      "forecast": 280.0,
+      "safety_stock": 283,
+      "safety_samples": 24,
+      "reorder_point": 563,
+      "reference_order_qty": 693,
+      "method": "mean3",
+      "method_name": "近3月均值",
+      "conflicting_signals": false,
+      "hold_for_review": false,
+      "advisory_order_qty": 693,
+      "state": "安全库存预警",
+      "reasons": [
+        "期初库存低于模型安全库存"
+      ],
+      "actions": [
+        "核实在途与可用状态，再确认采购交期和补货数量"
+      ],
+      "potential_excess_qty": 0,
+      "history": [
+        {
+          "month": 1,
+          "demand": 300
+        },
+        {
+          "month": 2,
+          "demand": 90
+        },
+        {
+          "month": 3,
+          "demand": 90
+        },
+        {
+          "month": 4,
+          "demand": 240
+        },
+        {
+          "month": 5,
+          "demand": 270
+        },
+        {
+          "month": 6,
+          "demand": 180
+        },
+        {
+          "month": 7,
+          "demand": 630
+        },
+        {
+          "month": 8,
+          "demand": 180
+        },
+        {
+          "month": 9,
+          "demand": 270
+        },
+        {
+          "month": 10,
+          "demand": 0
+        },
+        {
+          "month": 11,
+          "demand": 420
+        },
+        {
+          "month": 12,
+          "demand": 780
+        },
+        {
+          "month": 13,
+          "demand": 360
+        },
+        {
+          "month": 14,
+          "demand": 390
+        },
+        {
+          "month": 15,
+          "demand": 870
+        },
+        {
+          "month": 16,
+          "demand": 180
+        },
+        {
+          "month": 17,
+          "demand": 270
+        },
+        {
+          "month": 18,
+          "demand": 720
+        },
+        {
+          "month": 19,
+          "demand": 0
+        },
+        {
+          "month": 20,
+          "demand": 240
+        },
+        {
+          "month": 21,
+          "demand": 630
+        },
+        {
+          "month": 22,
+          "demand": 90
+        },
+        {
+          "month": 23,
+          "demand": 90
+        },
+        {
+          "month": 24,
+          "demand": 270
+        },
+        {
+          "month": 25,
+          "demand": 90
+        },
+        {
+          "month": 26,
+          "demand": 0
+        },
+        {
+          "month": 27,
+          "demand": 405
+        },
+        {
+          "month": 28,
+          "demand": 0
+        },
+        {
+          "month": 29,
+          "demand": 0
+        },
+        {
+          "month": 30,
+          "demand": 270
+        },
+        {
+          "month": 31,
+          "demand": 135
+        },
+        {
+          "month": 32,
+          "demand": 30
+        },
+        {
+          "month": 33,
+          "demand": 90
+        },
+        {
+          "month": 34,
+          "demand": 135
+        },
+        {
+          "month": 35,
+          "demand": 270
+        },
+        {
+          "month": 36,
+          "demand": 0
+        },
+        {
+          "month": 37,
+          "demand": 0
+        },
+        {
+          "month": 38,
+          "demand": 135
+        },
+        {
+          "month": 39,
+          "demand": 180
+        },
+        {
+          "month": 40,
+          "demand": 90
+        },
+        {
+          "month": 41,
+          "demand": 45
+        },
+        {
+          "month": 42,
+          "demand": 180
+        },
+        {
+          "month": 43,
+          "demand": 315
+        },
+        {
+          "month": 44,
+          "demand": 0
+        },
+        {
+          "month": 45,
+          "demand": 90
+        },
+        {
+          "month": 46,
+          "demand": 510
+        },
+        {
+          "month": 47,
+          "demand": 240
+        }
+      ]
+    },
+    {
+      "Medication": "M11",
+      "abc": "C",
+      "annual_demand_value": 392700.0,
+      "abc_share": 0.0004823435840331819,
+      "stock": 200,
+      "unit_price": 357.0,
+      "stock_value": 71400.0,
+      "mean_recent6": 120.0,
+      "coverage_months": 1.6666666666666667,
+      "stagnant": false,
+      "excess": false,
+      "high_risk": false,
+      "forecast": 0.0,
+      "safety_stock": 394,
+      "safety_samples": 24,
+      "reorder_point": 394,
+      "reference_order_qty": 194,
+      "method": "seasonal",
+      "method_name": "上一年同月",
+      "conflicting_signals": false,
+      "hold_for_review": false,
+      "advisory_order_qty": 194,
+      "state": "安全库存预警",
+      "reasons": [
+        "期初库存低于模型安全库存"
+      ],
+      "actions": [
+        "核实在途与可用状态，再确认采购交期和补货数量"
+      ],
+      "potential_excess_qty": 0,
+      "history": [
+        {
+          "month": 1,
+          "demand": 120
+        },
+        {
+          "month": 2,
+          "demand": 60
+        },
+        {
+          "month": 3,
+          "demand": 120
+        },
+        {
+          "month": 4,
+          "demand": 60
+        },
+        {
+          "month": 5,
+          "demand": 240
+        },
+        {
+          "month": 6,
+          "demand": 180
+        },
+        {
+          "month": 7,
+          "demand": 230
+        },
+        {
+          "month": 8,
+          "demand": 0
+        },
+        {
+          "month": 9,
+          "demand": 0
+        },
+        {
+          "month": 10,
+          "demand": 350
+        },
+        {
+          "month": 11,
+          "demand": 220
+        },
+        {
+          "month": 12,
+          "demand": 260
+        },
+        {
+          "month": 13,
+          "demand": 80
+        },
+        {
+          "month": 14,
+          "demand": 0
+        },
+        {
+          "month": 15,
+          "demand": 210
+        },
+        {
+          "month": 16,
+          "demand": 40
+        },
+        {
+          "month": 17,
+          "demand": 180
+        },
+        {
+          "month": 18,
+          "demand": 0
+        },
+        {
+          "month": 19,
+          "demand": 90
+        },
+        {
+          "month": 20,
+          "demand": 0
+        },
+        {
+          "month": 21,
+          "demand": 0
+        },
+        {
+          "month": 22,
+          "demand": 90
+        },
+        {
+          "month": 23,
+          "demand": 0
+        },
+        {
+          "month": 24,
+          "demand": 0
+        },
+        {
+          "month": 25,
+          "demand": 30
+        },
+        {
+          "month": 26,
+          "demand": 100
+        },
+        {
+          "month": 27,
+          "demand": 300
+        },
+        {
+          "month": 28,
+          "demand": 0
+        },
+        {
+          "month": 29,
+          "demand": 0
+        },
+        {
+          "month": 30,
+          "demand": 0
+        },
+        {
+          "month": 31,
+          "demand": 90
+        },
+        {
+          "month": 32,
+          "demand": 0
+        },
+        {
+          "month": 33,
+          "demand": 0
+        },
+        {
+          "month": 34,
+          "demand": 90
+        },
+        {
+          "month": 35,
+          "demand": 0
+        },
+        {
+          "month": 36,
+          "demand": 0
+        },
+        {
+          "month": 37,
+          "demand": 90
+        },
+        {
+          "month": 38,
+          "demand": 20
+        },
+        {
+          "month": 39,
+          "demand": 0
+        },
+        {
+          "month": 40,
+          "demand": 0
+        },
+        {
+          "month": 41,
+          "demand": 270
+        },
+        {
+          "month": 42,
+          "demand": 0
+        },
+        {
+          "month": 43,
+          "demand": 0
+        },
+        {
+          "month": 44,
+          "demand": 270
+        },
+        {
+          "month": 45,
+          "demand": 140
+        },
+        {
+          "month": 46,
+          "demand": 220
+        },
+        {
+          "month": 47,
+          "demand": 90
+        }
+      ]
+    },
+    {
+      "Medication": "M08",
+      "abc": "C",
+      "annual_demand_value": 120071.0,
+      "abc_share": 0.00014748020493620623,
+      "stock": 273,
+      "unit_price": 119.0,
+      "stock_value": 32487.0,
+      "mean_recent6": 107.33333333333333,
+      "coverage_months": 2.5434782608695654,
+      "stagnant": false,
+      "excess": false,
+      "high_risk": false,
+      "forecast": 84.08333333333333,
+      "safety_stock": 193,
+      "safety_samples": 24,
+      "reorder_point": 278,
+      "reference_order_qty": 89,
+      "method": "mean12",
+      "method_name": "近12月均值",
+      "conflicting_signals": false,
+      "hold_for_review": false,
+      "advisory_order_qty": 89,
+      "state": "补货关注",
+      "reasons": [
+        "库存低于覆盖交期需求与缓冲的补货阈值"
+      ],
+      "actions": [
+        "核实在途与可用状态，再确认采购交期和补货数量"
+      ],
+      "potential_excess_qty": 0,
+      "history": [
+        {
+          "month": 1,
+          "demand": 205
+        },
+        {
+          "month": 2,
+          "demand": 50
+        },
+        {
+          "month": 3,
+          "demand": 75
+        },
+        {
+          "month": 4,
+          "demand": 0
+        },
+        {
+          "month": 5,
+          "demand": 105
+        },
+        {
+          "month": 6,
+          "demand": 102
+        },
+        {
+          "month": 7,
+          "demand": 34
+        },
+        {
+          "month": 8,
+          "demand": 60
+        },
+        {
+          "month": 9,
+          "demand": 144
+        },
+        {
+          "month": 10,
+          "demand": 73
+        },
+        {
+          "month": 11,
+          "demand": 142
+        },
+        {
+          "month": 12,
+          "demand": 177
+        },
+        {
+          "month": 13,
+          "demand": 123
+        },
+        {
+          "month": 14,
+          "demand": 77
+        },
+        {
+          "month": 15,
+          "demand": 209
+        },
+        {
+          "month": 16,
+          "demand": 112
+        },
+        {
+          "month": 17,
+          "demand": 30
+        },
+        {
+          "month": 18,
+          "demand": 30
+        },
+        {
+          "month": 19,
+          "demand": 84
+        },
+        {
+          "month": 20,
+          "demand": 48
+        },
+        {
+          "month": 21,
+          "demand": 84
+        },
+        {
+          "month": 22,
+          "demand": 127
+        },
+        {
+          "month": 23,
+          "demand": 126
+        },
+        {
+          "month": 24,
+          "demand": 98
+        },
+        {
+          "month": 25,
+          "demand": 62
+        },
+        {
+          "month": 26,
+          "demand": 30
+        },
+        {
+          "month": 27,
+          "demand": 171
+        },
+        {
+          "month": 28,
+          "demand": 164
+        },
+        {
+          "month": 29,
+          "demand": 270
+        },
+        {
+          "month": 30,
+          "demand": 99
+        },
+        {
+          "month": 31,
+          "demand": 156
+        },
+        {
+          "month": 32,
+          "demand": 258
+        },
+        {
+          "month": 33,
+          "demand": 84
+        },
+        {
+          "month": 34,
+          "demand": 102
+        },
+        {
+          "month": 35,
+          "demand": 238
+        },
+        {
+          "month": 36,
+          "demand": 63
+        },
+        {
+          "month": 37,
+          "demand": 0
+        },
+        {
+          "month": 38,
+          "demand": 14
+        },
+        {
+          "month": 39,
+          "demand": 77
+        },
+        {
+          "month": 40,
+          "demand": 169
+        },
+        {
+          "month": 41,
+          "demand": 42
+        },
+        {
+          "month": 42,
+          "demand": 21
+        },
+        {
+          "month": 43,
+          "demand": 142
+        },
+        {
+          "month": 44,
+          "demand": 105
+        },
+        {
+          "month": 45,
+          "demand": 177
+        },
+        {
+          "month": 46,
+          "demand": 115
+        },
+        {
+          "month": 47,
+          "demand": 84
+        }
+      ]
+    },
+    {
+      "Medication": "M12",
+      "abc": "C",
+      "annual_demand_value": 61180.0,
+      "abc_share": 7.514586318092708e-05,
+      "stock": 149,
+      "unit_price": 95.0,
+      "stock_value": 14155.0,
+      "mean_recent6": 53.5,
+      "coverage_months": 2.7850467289719627,
+      "stagnant": false,
+      "excess": false,
+      "high_risk": false,
+      "forecast": 53.666666666666664,
+      "safety_stock": 207,
+      "safety_samples": 24,
+      "reorder_point": 261,
+      "reference_order_qty": 166,
+      "method": "mean12",
+      "method_name": "近12月均值",
+      "conflicting_signals": false,
+      "hold_for_review": false,
+      "advisory_order_qty": 166,
+      "state": "安全库存预警",
+      "reasons": [
+        "期初库存低于模型安全库存"
+      ],
+      "actions": [
+        "核实在途与可用状态，再确认采购交期和补货数量"
+      ],
+      "potential_excess_qty": 0,
+      "history": [
+        {
+          "month": 1,
+          "demand": 60
+        },
+        {
+          "month": 2,
+          "demand": 30
+        },
+        {
+          "month": 3,
+          "demand": 30
+        },
+        {
+          "month": 4,
+          "demand": 30
+        },
+        {
+          "month": 5,
+          "demand": 0
+        },
+        {
+          "month": 6,
+          "demand": 0
+        },
+        {
+          "month": 7,
+          "demand": 180
+        },
+        {
+          "month": 8,
+          "demand": 0
+        },
+        {
+          "month": 9,
+          "demand": 238
+        },
+        {
+          "month": 10,
+          "demand": 181
+        },
+        {
+          "month": 11,
+          "demand": 114
+        },
+        {
+          "month": 12,
+          "demand": 0
+        },
+        {
+          "month": 13,
+          "demand": 0
+        },
+        {
+          "month": 14,
+          "demand": 30
+        },
+        {
+          "month": 15,
+          "demand": 0
+        },
+        {
+          "month": 16,
+          "demand": 20
+        },
+        {
+          "month": 17,
+          "demand": 0
+        },
+        {
+          "month": 18,
+          "demand": 0
+        },
+        {
+          "month": 19,
+          "demand": 0
+        },
+        {
+          "month": 20,
+          "demand": 60
+        },
+        {
+          "month": 21,
+          "demand": 0
+        },
+        {
+          "month": 22,
+          "demand": 90
+        },
+        {
+          "month": 23,
+          "demand": 90
+        },
+        {
+          "month": 24,
+          "demand": 0
+        },
+        {
+          "month": 25,
+          "demand": 0
+        },
+        {
+          "month": 26,
+          "demand": 90
+        },
+        {
+          "month": 27,
+          "demand": 0
+        },
+        {
+          "month": 28,
+          "demand": 0
+        },
+        {
+          "month": 29,
+          "demand": 0
+        },
+        {
+          "month": 30,
+          "demand": 211
+        },
+        {
+          "month": 31,
+          "demand": 60
+        },
+        {
+          "month": 32,
+          "demand": 0
+        },
+        {
+          "month": 33,
+          "demand": 90
+        },
+        {
+          "month": 34,
+          "demand": 53
+        },
+        {
+          "month": 35,
+          "demand": 37
+        },
+        {
+          "month": 36,
+          "demand": 90
+        },
+        {
+          "month": 37,
+          "demand": 0
+        },
+        {
+          "month": 38,
+          "demand": 90
+        },
+        {
+          "month": 39,
+          "demand": 20
+        },
+        {
+          "month": 40,
+          "demand": 33
+        },
+        {
+          "month": 41,
+          "demand": 90
+        },
+        {
+          "month": 42,
+          "demand": 0
+        },
+        {
+          "month": 43,
+          "demand": 0
+        },
+        {
+          "month": 44,
+          "demand": 7
+        },
+        {
+          "month": 45,
+          "demand": 144
+        },
+        {
+          "month": 46,
+          "demand": 170
+        },
+        {
+          "month": 47,
+          "demand": 0
+        }
+      ]
+    }
+  ],
+  "benchmark": {
+    "base_rows": 99840,
+    "audit": {
+      "input_rows": 100340,
+      "invalid_rows": 1550,
+      "duplicate_rows": 492,
+      "output_rows": 98298
+    },
+    "timings_seconds": {
+      "pandas": [
+        0.5102020999183878,
+        0.5422785999253392,
+        0.5222189000342041,
+        0.5302838999778032,
+        0.5449981999117881
+      ],
+      "row_loop": [
+        0.72609609994106,
+        0.7720247999532148,
+        0.7565007999073714,
+        0.711518399999477,
+        0.718457999988459
+      ]
+    },
+    "median_seconds": {
+      "pandas": 0.5302838999778032,
+      "row_loop": 0.72609609994106
+    },
+    "time_reduction_pct": 26.967807701921487,
+    "outputs_equal": true,
+    "description": "人工构造的导入压力测试；对照为逐行 Python，同一内存输入，不包括网络与文件读取，不代表人工 Excel 耗时。"
+  },
+  "tests": {
+    "run": 23,
+    "failures": 0,
+    "errors": 0
+  }
+}

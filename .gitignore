@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+.venv/
+tools/node_modules/
+publication/
+outputs/*.zip
+outputs/demo/verification/
+outputs/demo/*.inspect.ndjson
+research/benchmark_initial.json
+.env
+.env.*

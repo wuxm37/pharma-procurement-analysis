@@ -1,0 +1,262 @@
+{
+  "status": "prepared_locally_not_published",
+  "pages_source": "main:/docs",
+  "files": {
+    ".gitattributes": {
+      "bytes": 101,
+      "sha256": "c7e0beb8cc8fd07f764329a90a66662b205fd9a8d9e18833d13ae2dad0cadd50"
+    },
+    ".gitignore": {
+      "bytes": 178,
+      "sha256": "de194bced4314a5a61ac10c873524d2a230d5027ef174af6ddb4f2d7304261f7"
+    },
+    "BEGINNER_GUIDE.md": {
+      "bytes": 2640,
+      "sha256": "cac1ad85b255f821dc6cd6f1d1a8e67daa998f996fc14987f77e03647b64994c"
+    },
+    "BUSINESS_FLOW.md": {
+      "bytes": 3148,
+      "sha256": "b1f52fafaff2c218172b65b3dc92040a369fc7641c926dc83fddc0367068d788"
+    },
+    "DATA_DICTIONARY.md": {
+      "bytes": 7903,
+      "sha256": "fa6f8ac917c9d09edb6e8e40122e9dbb099d443fb0443963a323477199419573"
+    },
+    "DESIGN.md": {
+      "bytes": 6140,
+      "sha256": "413da24fc84bde86dab2a3630c4dde8fe5b8769f7c1ea0dd309a23d694dd34a3"
+    },
+    "LOCAL_RUN.md": {
+      "bytes": 1525,
+      "sha256": "b0604501656d6e36ef06566b583297f197b0852a6eddf819ecc66d384c099a34"
+    },
+    "NOTICE.md": {
+      "bytes": 1089,
+      "sha256": "86066a2e1c8d2801b21fb3c13bd564013df8f65ba2c4b829da9aeeaa3545041d"
+    },
+    "PUBLISHING.md": {
+      "bytes": 1819,
+      "sha256": "6c3f4325fd5afef6f758a5b6915edd8fd85d91420f7ee10d03e1fa2ed81f5b31"
+    },
+    "README.md": {
+      "bytes": 9181,
+      "sha256": "386a21fd8aa10e41bc24ee6746902a8e3938bed9975c0ee3d3e8277e0061cfe4"
+    },
+    "analysis/__init__.py": {
+      "bytes": 76,
+      "sha256": "9f60af250bf300b8764d83bf8d171bddd2732b294bc836b38593fefae81da641"
+    },
+    "analysis/cleaning.py": {
+      "bytes": 6523,
+      "sha256": "2997807a667c2287762899a05400047a06076af2633ba143a364c1f21411a307"
+    },
+    "analysis/forecast.py": {
+      "bytes": 3805,
+      "sha256": "05d8eec1af3ca910992949602446dcc0ef5522ec7bad607007d84311f2bc930d"
+    },
+    "analysis/inventory.py": {
+      "bytes": 10276,
+      "sha256": "ed764652fbc48f34e8fd35fc8930f4c3ac190b7f870669c815ed89d35d1aab25"
+    },
+    "analysis/presentation.py": {
+      "bytes": 10165,
+      "sha256": "60aead0aebe7c773434cd3cdfe8195496edcb225ca7efbaf4fcc516507c68c70"
+    },
+    "analysis/reporting.py": {
+      "bytes": 9198,
+      "sha256": "604559b4d627174d96b05de804dcb41b53a7ac468fc0140c20ced6c8bbc4ab27"
+    },
+    "analysis/source.py": {
+      "bytes": 1911,
+      "sha256": "eb398bfad6d7dbc2501702988f2505fe003416b67bd329303c5f3b7a59f2603c"
+    },
+    "config.json": {
+      "bytes": 492,
+      "sha256": "1180f5fce81f46d64d13536d0ba63495fb4b22252d8f0e2dd6ebc85936573a14"
+    },
+    "data/source/AUTHOR_README.md": {
+      "bytes": 4956,
+      "sha256": "5468940a3cc5650304bd708b6a0d9cb0d4e8bdb59c18a4afad8c6eae946f8d63"
+    },
+    "data/source/data_dictionary.csv": {
+      "bytes": 1665,
+      "sha256": "89184c876690e09d34449c0adea618fc57e068df820377de072ec2e80db55066"
+    },
+    "data/source/empirical_inputs.csv": {
+      "bytes": 1112,
+      "sha256": "23ce07974f66f3ebc853012eee93cb678c9e5c322ef44e056815023d1e1f51ee"
+    },
+    "data/source/monthly_demand_long.csv": {
+      "bytes": 6870,
+      "sha256": "61667f999afe512277c24593aacb8f7125c625b74ee9fcae62d253527a05c27b"
+    },
+    "data/source/source_manifest.json": {
+      "bytes": 746,
+      "sha256": "8d26e465b9b68e4dbc9f6a666f830173c77d3b31560d9e77832de1a827e5e9a5"
+    },
+    "docs/.nojekyll": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "docs/ANALYSIS_REPORT.md": {
+      "bytes": 7463,
+      "sha256": "c4b57c2c2b812088b56a51949c988f5fb3e06cf49e1d92ca05c2cb0c5a0d62ad"
+    },
+    "docs/assets/dashboard-preview.png": {
+      "bytes": 71571,
+      "sha256": "cc95bec64c8ee2d9b08d6560b5ba126a0189d04c27eb9e15543ccf8c04bd19e7"
+    },
+    "docs/cleaned_demand.csv": {
+      "bytes": 7498,
+      "sha256": "7a248ec7b72d50ae8e8d9945c6d743812206f1a1300286c90b255fe8cf5e2bd5"
+    },
+    "docs/forecast_test.csv": {
+      "bytes": 8013,
+      "sha256": "bf5bf2f82561a0d22d3a4b257ac66c14dfbc032d010e89c171471c622a365eef"
+    },
+    "docs/forecast_validation.csv": {
+      "bytes": 3443,
+      "sha256": "137eef3f54bfb5ba9984fb651144db5d06318de4db6adf570f30bdb44ecc54f9"
+    },
+    "docs/index.html": {
+      "bytes": 124992,
+      "sha256": "12f7bd099057f1967a0f1bf39510834913faa604f933b49751344fcdd7b592c2"
+    },
+    "docs/inventory_risks.csv": {
+      "bytes": 4520,
+      "sha256": "a72805ddbfe881f7597fc74b12cde836bbee83aefe5bbc206284fc7ed9bcc608"
+    },
+    "docs/procurement_analysis.xlsx": {
+      "bytes": 23810,
+      "sha256": "f43b86b2455ad02ad8767a89ffef7cd38b8757d58d736ae5b41a52b665452996"
+    },
+    "docs/project.html": {
+      "bytes": 7450,
+      "sha256": "840f6b62f14fc54b0e6bc3f6cdc8659baf606c78d290feb4fb484d0c889bee57"
+    },
+    "docs/report.html": {
+      "bytes": 11297,
+      "sha256": "47aea7185da40957307b6945c25d0982c919733304cf872b3eec216718b42168"
+    },
+    "docs/results.json": {
+      "bytes": 140235,
+      "sha256": "09bc8289c81e920b4a92432b9bfd2760429804863cb3f447d98b7b2c683e4dec"
+    },
+    "docs/simulation_ledger.csv": {
+      "bytes": 49532,
+      "sha256": "f75d11a1dca232cdf67505a7e69c84650c1154b3ca7777369a54955a6f32db33"
+    },
+    "docs/stress_lead2_ledger.csv": {
+      "bytes": 49923,
+      "sha256": "406ef82c08e9e6e1aee76cf012676d50bb7716902df763f21dd6dd511f9a0588"
+    },
+    "docs/test_results.txt": {
+      "bytes": 2783,
+      "sha256": "651ca904db58c94c4eb0a3bb82fd58aa92b5d9d870b9301c4320aa7b136735e0"
+    },
+    "outputs/demo/ANALYSIS_REPORT.md": {
+      "bytes": 7463,
+      "sha256": "c4b57c2c2b812088b56a51949c988f5fb3e06cf49e1d92ca05c2cb0c5a0d62ad"
+    },
+    "outputs/demo/cleaned_demand.csv": {
+      "bytes": 7498,
+      "sha256": "7a248ec7b72d50ae8e8d9945c6d743812206f1a1300286c90b255fe8cf5e2bd5"
+    },
+    "outputs/demo/forecast_test.csv": {
+      "bytes": 8013,
+      "sha256": "bf5bf2f82561a0d22d3a4b257ac66c14dfbc032d010e89c171471c622a365eef"
+    },
+    "outputs/demo/forecast_validation.csv": {
+      "bytes": 3443,
+      "sha256": "137eef3f54bfb5ba9984fb651144db5d06318de4db6adf570f30bdb44ecc54f9"
+    },
+    "outputs/demo/index.html": {
+      "bytes": 124992,
+      "sha256": "12f7bd099057f1967a0f1bf39510834913faa604f933b49751344fcdd7b592c2"
+    },
+    "outputs/demo/inventory_risks.csv": {
+      "bytes": 4520,
+      "sha256": "a72805ddbfe881f7597fc74b12cde836bbee83aefe5bbc206284fc7ed9bcc608"
+    },
+    "outputs/demo/procurement_analysis.xlsx": {
+      "bytes": 23810,
+      "sha256": "f43b86b2455ad02ad8767a89ffef7cd38b8757d58d736ae5b41a52b665452996"
+    },
+    "outputs/demo/project.html": {
+      "bytes": 7450,
+      "sha256": "840f6b62f14fc54b0e6bc3f6cdc8659baf606c78d290feb4fb484d0c889bee57"
+    },
+    "outputs/demo/report.html": {
+      "bytes": 11297,
+      "sha256": "47aea7185da40957307b6945c25d0982c919733304cf872b3eec216718b42168"
+    },
+    "outputs/demo/results.json": {
+      "bytes": 140235,
+      "sha256": "09bc8289c81e920b4a92432b9bfd2760429804863cb3f447d98b7b2c683e4dec"
+    },
+    "outputs/demo/run_manifest.json": {
+      "bytes": 2643,
+      "sha256": "fb9d14ec41686c695a543779573f0eefd0a92107bdbd5bb42599c5b98e9fd1ca"
+    },
+    "outputs/demo/simulation_ledger.csv": {
+      "bytes": 49532,
+      "sha256": "f75d11a1dca232cdf67505a7e69c84650c1154b3ca7777369a54955a6f32db33"
+    },
+    "outputs/demo/stress_lead2_ledger.csv": {
+      "bytes": 49923,
+      "sha256": "406ef82c08e9e6e1aee76cf012676d50bb7716902df763f21dd6dd511f9a0588"
+    },
+    "outputs/demo/test_results.txt": {
+      "bytes": 2783,
+      "sha256": "651ca904db58c94c4eb0a3bb82fd58aa92b5d9d870b9301c4320aa7b136735e0"
+    },
+    "requirements.txt": {
+      "bytes": 28,
+      "sha256": "03f37afc66ef819589adc190f2fd0db3ee7f8a861b72631c402d3f61917e9591"
+    },
+    "research/zenodo_audited_source.zip": {
+      "bytes": 2742430,
+      "sha256": "0cc34913bbb78ad0651c46e147d3fe5b479c436b5c40c66e2708b0ee1a2ab0dd"
+    },
+    "research/zenodo_metadata.json": {
+      "bytes": 5833,
+      "sha256": "60f63756cd9787e38ab5cc05d3515b00291fe0cca64134eea3696c7d963cc774"
+    },
+    "run_project.py": {
+      "bytes": 7252,
+      "sha256": "31320e8bf5139508df29815beac9e349a700bcd83b6fed8400a9e6fe177d1b81"
+    },
+    "tests/test_analysis.py": {
+      "bytes": 8243,
+      "sha256": "311834adac566e4cd183feeb87f16683dbc89f307f3c9e42e576207ca753d32d"
+    },
+    "tools/export_workbook.mjs": {
+      "bytes": 11134,
+      "sha256": "c09c4e741db3cffa7a19ecf2d75ae584050f0e5eb2f2cdcb0c975ee247477b6d"
+    },
+    "tools/prepare_publication.py": {
+      "bytes": 3926,
+      "sha256": "0c2148615713f4804460d580757dc9a4deac751981d933bed29c33f1a5950034"
+    },
+    "tools/verify_outputs.py": {
+      "bytes": 4358,
+      "sha256": "24c089ec2818b66081b344020661fd669133a05ad1e94db097edbb374dc58855"
+    },
+    "web/assets/dashboard-preview.png": {
+      "bytes": 71571,
+      "sha256": "cc95bec64c8ee2d9b08d6560b5ba126a0189d04c27eb9e15543ccf8c04bd19e7"
+    },
+    "web/dashboard.html": {
+      "bytes": 36078,
+      "sha256": "b10a22d32b888f8f069a249b4b1031f509a1dc6621104ce6e5fbc94fe9bc66ee"
+    },
+    "打开看板.cmd": {
+      "bytes": 50,
+      "sha256": "0ca4036bc51b1775fefa852462f28c930781c8830588fee2515b2314d312f32e"
+    },
+    "重新生成.ps1": {
+      "bytes": 1456,
+      "sha256": "ca425bec4e663b6a6921bb93dcc6beac5825554d5812e7dead1c363ac83d217a"
+    }
+  }
+}
